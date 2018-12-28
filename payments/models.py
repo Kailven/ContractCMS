@@ -16,6 +16,6 @@ class Payment(models.Model):
         return "{:,.2f}".format(self.amount)
 
     class Meta:
-        ordering = ('contract', 'created')
+        ordering = ('payday',)
         verbose_name = '付款记录'
         verbose_name_plural = '付款记录'

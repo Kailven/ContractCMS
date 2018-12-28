@@ -15,6 +15,6 @@ class Requisition(models.Model):
         return "{:,.2f}".format(self.amount)
 
     class Meta:
-        ordering = ('contract', 'created')
+        ordering = ('payday',)
         verbose_name = '请款记录'
         verbose_name_plural = '请款记录'
