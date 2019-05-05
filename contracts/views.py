@@ -31,7 +31,7 @@ def contract_list(request, subject_id=None):
     subject = None
     if request.method == "GET":
         subjects = Subject.objects.all().order_by('created')
-        contracts = Contract.objects.filter(master__isnull=True).order_by('-created')[0:15]
+        contracts = Contract.objects.filter(master__isnull=True).order_by('index', '-created')[0:15]
         if subject_id:
             subject = get_object_or_404(Subject, id=subject_id)
             contracts = contracts.filter(subject=subject)
@@ -184,7 +184,7 @@ def contract_listall(request, subject_id=None):
     subject = None
     if request.method == "GET":
         subjects = Subject.objects.all().order_by('created')
-        contracts = Contract.objects.filter(master__isnull=True).order_by('-created')
+        contracts = Contract.objects.filter(master__isnull=True).order_by('index')
         if subject_id:
             subject = get_object_or_404(Subject, id=subject_id)
             contracts = contracts.filter(subject=subject)
