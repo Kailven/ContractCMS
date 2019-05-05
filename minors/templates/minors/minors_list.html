@@ -31,6 +31,20 @@
                         <div class="accordion-content" data-tab-content>
                             <form action="{% url 'minors:minor_add' %}" method="post">
                                 <div class="grid-container">
+                                   <div class="grid-x align-center-middle grid-padding-x ">
+                                       <div class="cell small-10 medium-4 medium-text-right">
+                                                <label for="company_id">公司:</label>
+                                        </div>
+
+                                       <div class="cell small-10 medium-8">
+                                           <select name="company_id" id="company_id">
+                                               <option value="1">玛宝</option>
+                                               <option value="2">天虹</option>
+                                           </select>
+                                        </div>
+                                   </div>
+
+
                                     {% for field in form %}
                                         <div class="grid-x align-center-middle grid-padding-x ">
 
@@ -70,9 +84,10 @@
                                 <thead>
                                 <tr>
                                     <th class="text-center">序号</th>
-                                    <th class="text-center">名称</th>
+                                    <th class="text-center">公司</th>
+                                    <th class="text-center">付款内容</th>
                                     <th class="text-center">金额</th>
-                                    <th class="text-center">付款单位</th>
+                                    <th class="text-center">对方公司</th>
                                     <th class="text-center">请款金额</th>
                                     <th class="text-center">付款金额</th>
                                     <th class="text-center">类别</th>
@@ -85,6 +100,7 @@
 
                                     <tr>
                                         <td data-label="序号">{{ forloop.counter }}</td>
+                                        <td data-label="名称">{{ directcost.company.name }}</td>
                                         <td data-label="名称">{{ directcost.name }}</td>
                                         <td data-label="金额"><a href="{% url 'minors:minor_edit' directcost.id %}">{{ directcost.amount|comma }}</a></td>
                                         <td data-label="付款单位">{{ directcost.supplier }}</td>

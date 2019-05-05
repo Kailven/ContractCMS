@@ -92,11 +92,16 @@ def contract_add(request, master_id=None):
 
     else:
         form = ContractForm(request.POST)
+
         if form.is_valid():
+            company_id = request.POST.get("company_id")
             new_contract = form.save(commit=False)
+            new_contract.company = Company.objects.get(id=company_id)
+
             index = new_contract.company.name + '(' + new_contract.sign.strftime(
                 "%Y") + ')' + '-' + new_contract.subject.tag + '-' + str(
-                Contract.objects.filter(subject=new_contract.subject, company=get_object_or_404(Company, id=1)).filter(
+                Contract.objects.filter(subject=new_contract.subject,
+                                        company=get_object_or_404(Company, id=company_id)).filter(
                     master__isnull=True).count() + 1).zfill(3)
             master_contract_id = request.POST.get('master', None)
             if master_contract_id:
@@ -112,8 +117,8 @@ def contract_add(request, master_id=None):
                     request.user.username,
                     new_contract.name,
                     new_contract.id,
-                new_contract.amount,
-                new_contract.definite))
+                    new_contract.amount,
+                    new_contract.definite))
             messages.success(request, '合同新增成功')
             return redirect(
                 reverse(
@@ -154,8 +159,8 @@ def contract_edit(request, contract_id):
                     request.user.username,
                     current_contract.name,
                     current_contract.id,
-                current_contract.amount,
-                current_contract.definite))
+                    current_contract.amount,
+                    current_contract.definite))
             messages.success(request, '合同信息修改成功')
             return redirect(
                 reverse(

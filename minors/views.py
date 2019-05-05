@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 from .models import DirectCost, DirectRequisition, DirectPayment
-from contracts.models import Subject
+from contracts.models import Subject, Company
 from .forms import DirectCostForm, DirectRequisitionForm, DirectPaymentForm
 from django.contrib import messages
 from django.urls import reverse
@@ -38,7 +38,11 @@ def minor_add(request):
     if request.method == "POST":
         form = DirectCostForm(request.POST)
         if form.is_valid():
-            new_minor = form.save()
+            new_minor = form.save(commit=False)
+            company_id = request.POST.get("company_id")
+            company = Company.objects.get(id=company_id)
+            new_minor.company = company
+            new_minor.save()
             messages.success(request, '成功添加非合同记录')
             logging.info(
                 "{} | minor_add | name={} | id={} | amount={}".format(
