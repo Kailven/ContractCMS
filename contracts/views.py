@@ -31,10 +31,12 @@ def contract_list(request, subject_id=None):
     subject = None
     if request.method == "GET":
         subjects = Subject.objects.all().order_by('created')
-        contracts = Contract.objects.filter(master__isnull=True).order_by('index', '-created')[0:15]
+        contracts = Contract.objects.filter(master__isnull=True).order_by('index', '-created')
         if subject_id:
             subject = get_object_or_404(Subject, id=subject_id)
             contracts = contracts.filter(subject=subject)
+        else:
+            contracts = contracts[0:15]
         return render(request,
                       'contracts/contracts_list.html',
                       {'subjects': subjects,
