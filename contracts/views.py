@@ -31,7 +31,7 @@ def contract_list(request, subject_id=None):
     subject = None
     if request.method == "GET":
         subjects = Subject.objects.all().order_by('created')
-        contracts = Contract.objects.filter(master__isnull=True)
+        contracts = Contract.objects.filter(master__isnull=True).order_by('-created')[0:15]
         if subject_id:
             subject = get_object_or_404(Subject, id=subject_id)
             contracts = contracts.filter(subject=subject)
@@ -170,3 +170,39 @@ def contract_edit(request, contract_id):
         messages.error(request, '请检查填写是否正确')
         return render(request, 'contracts/contracts_edit.html',
                       {'form': form, 'contract': contract})
+
+
+def contract_listall(request, subject_id=None):
+    """
+        GET请求返回合同列表页
+        分页功能待添加
+        POST请求为查询合同名称及供应商字段
+        :param request:
+        :param subject_id:
+        :return:
+        """
+    subject = None
+    if request.method == "GET":
+        subjects = Subject.objects.all().order_by('created')
+        contracts = Contract.objects.filter(master__isnull=True).order_by('-created')
+        if subject_id:
+            subject = get_object_or_404(Subject, id=subject_id)
+            contracts = contracts.filter(subject=subject)
+        return render(request,
+                      'contracts/contracts_list_all.html',
+                      {'subjects': subjects,
+                       'contracts': contracts,
+                       'subject': subject})
+
+    else:
+        search = request.POST.get('search', None)
+        if not search:
+            return redirect(reverse('contracts:contract_list'))
+        subjects = Subject.objects.all().order_by('created')
+        contracts = Contract.objects.filter(
+            Q(name__contains=search) | Q(supplier__contains=search)).distinct()
+        return render(request,
+                      'contracts/contracts_search.html',
+                      {'subjects': subjects,
+                       'contracts': contracts,
+                       'search': search})
