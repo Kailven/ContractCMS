@@ -31,7 +31,7 @@ def contract_list(request, subject_id=None):
     subject = None
     if request.method == "GET":
         subjects = Subject.objects.all().order_by('created')
-        contracts = Contract.objects.filter(master__isnull=True)
+        contracts = Contract.objects.filter(master__isnull=True).order_by('index', '-created')[0:15]
         if subject_id:
             subject = get_object_or_404(Subject, id=subject_id)
             contracts = contracts.filter(subject=subject)
@@ -92,11 +92,16 @@ def contract_add(request, master_id=None):
 
     else:
         form = ContractForm(request.POST)
+
         if form.is_valid():
+            company_id = request.POST.get("company_id")
             new_contract = form.save(commit=False)
+            new_contract.company = Company.objects.get(id=company_id)
+
             index = new_contract.company.name + '(' + new_contract.sign.strftime(
                 "%Y") + ')' + '-' + new_contract.subject.tag + '-' + str(
-                Contract.objects.filter(subject=new_contract.subject, company=get_object_or_404(Company, id=1)).filter(
+                Contract.objects.filter(subject=new_contract.subject,
+                                        company=get_object_or_404(Company, id=company_id)).filter(
                     master__isnull=True).count() + 1).zfill(3)
             master_contract_id = request.POST.get('master', None)
             if master_contract_id:
@@ -112,8 +117,8 @@ def contract_add(request, master_id=None):
                     request.user.username,
                     new_contract.name,
                     new_contract.id,
-                new_contract.amount,
-                new_contract.definite))
+                    new_contract.amount,
+                    new_contract.definite))
             messages.success(request, '合同新增成功')
             return redirect(
                 reverse(
@@ -154,8 +159,8 @@ def contract_edit(request, contract_id):
                     request.user.username,
                     current_contract.name,
                     current_contract.id,
-                current_contract.amount,
-                current_contract.definite))
+                    current_contract.amount,
+                    current_contract.definite))
             messages.success(request, '合同信息修改成功')
             return redirect(
                 reverse(
@@ -165,3 +170,39 @@ def contract_edit(request, contract_id):
         messages.error(request, '请检查填写是否正确')
         return render(request, 'contracts/contracts_edit.html',
                       {'form': form, 'contract': contract})
+
+
+def contract_listall(request, subject_id=None):
+    """
+        GET请求返回合同列表页
+        分页功能待添加
+        POST请求为查询合同名称及供应商字段
+        :param request:
+        :param subject_id:
+        :return:
+        """
+    subject = None
+    if request.method == "GET":
+        subjects = Subject.objects.all().order_by('created')
+        contracts = Contract.objects.filter(master__isnull=True).order_by('index')
+        if subject_id:
+            subject = get_object_or_404(Subject, id=subject_id)
+            contracts = contracts.filter(subject=subject)
+        return render(request,
+                      'contracts/contracts_list_all.html',
+                      {'subjects': subjects,
+                       'contracts': contracts,
+                       'subject': subject})
+
+    else:
+        search = request.POST.get('search', None)
+        if not search:
+            return redirect(reverse('contracts:contract_list'))
+        subjects = Subject.objects.all().order_by('created')
+        contracts = Contract.objects.filter(
+            Q(name__contains=search) | Q(supplier__contains=search)).distinct()
+        return render(request,
+                      'contracts/contracts_search.html',
+                      {'subjects': subjects,
+                       'contracts': contracts,
+                       'search': search})
