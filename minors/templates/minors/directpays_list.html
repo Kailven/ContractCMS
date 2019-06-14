@@ -67,7 +67,12 @@
                                         <td data-label="序号" class="text-center">{{ forloop.counter }}</td>
                                         <td data-label="金额" class=""><a href="{% url 'minors:pay_edit' directcost.id payment.id %}">{{ payment.amount|comma }}</a></td>
                                         <td data-label="付款日期" class="">{{ payment.payday|date:"Y-m-d" }}</td>
+                                        {% if payment.record %}
                                         <td data-label="凭证号">{{ payment.payday|date:"Y年m月" }}-{{ payment.record|record }}</td>
+                                        {% else %}
+                                        <td data-label="凭证号">请及时补充凭证号</td>
+
+                                        {% endif %}
                                         <td data-label="增值税率">{{ payment.rate|rate }}</td>
                                         <td data-label="备注">{{ req.text }}</td>
                                     </tr>
