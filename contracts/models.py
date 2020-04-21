@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.shortcuts import get_object_or_404
 from django.db.models import Sum
 from decimal import Decimal
-
+from django.utils import timezone
 
 class Company(models.Model):
     name = models.CharField(max_length=40, verbose_name='公司名称')
@@ -74,7 +74,7 @@ class Contract(models.Model):
     master = models.PositiveIntegerField(null=True, blank=True, verbose_name='补充合同')
     stamp = models.ForeignKey(Stamp, on_delete=models.CASCADE, related_name='contracts', verbose_name='印花税类型',
                               default=12)
-    created = models.DateTimeField(auto_now_add=True, verbose_name='创建时间', db_index=True)
+    created = models.DateTimeField(default=timezone.now, verbose_name='创建时间', db_index=True)
     updated = models.DateTimeField(auto_now=True, verbose_name='更新时间')
 
     def __str__(self):
@@ -129,6 +129,16 @@ class Contract(models.Model):
             return self.total_payment() / self.amount
         else:
             return None
+
+    def total_tax(self):
+        if self.payments.all().count():
+            return self.payments.all().aggregate(Sum('tax'))['tax__sum']
+        return 0
+
+    def total_cost(self):
+        if self.payments.all().count():
+            return self.total_payment() - self.total_tax()
+        return 0
 
 
     class Meta:

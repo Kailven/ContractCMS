@@ -76,6 +76,12 @@
                             <div class="cell medium-6"><p><strong>付款比例：</strong>
                             {% if contract.payment_rate %}{% if contract.payment_rate > 1 %}<span class="alert-color"><i class="fi-alert"></i></span>{% endif %}{{ contract.payment_rate|rate }}{% endif %}
                             </p></div>
+                             <div class="cell medium-6"><p><strong>增值税额：</strong>
+                            {% if contract.total_tax %}{{ contract.total_tax|comma }}{% endif %}
+                            </p></div>
+                             <div class="cell medium-6"><p><strong>成本金额：</strong>
+                            {% if contract.total_cost %}{{ contract.total_cost|comma }}{% endif %}
+                            </p></div>
                             <div class="cell text-center"><p><strong>合同摘要：<br></strong>{{ contract.text|show_as_para|safe }}</p></div>
                         </div>
 

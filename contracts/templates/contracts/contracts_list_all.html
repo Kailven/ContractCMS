@@ -17,7 +17,7 @@
                     <li class="accordion-item " data-accordion-item>
                         <a href="#" class="accordion-title rem-1">合同种类</a>
                         <div class="accordion-content" data-tab-content>
-                            <a href="{% url 'contracts:contract_list' %}">全部</a>
+                            <a href="{% url 'contracts:contract_listall' %}">全部</a>
                             {% for subject in subjects %}
                                 <hr class="hide-for-small-only">
                                 <br class="show-for-small-only">
@@ -57,6 +57,8 @@
                                     <th class="text-center">请款比例</th>
                                     <th class="text-center"><span data-tooltip tabindex="2"
                                                                   title="点击金额查看付款详情">付款金额</span></th>
+                                    <th class="text-center">成本金额</th>
+                                     <th class="text-center">增值税额</th>
                                     <th class="text-center">付款比例</th>
                                     <th class="text-center hide-for-small-only">签订时间</th>
                                     <th class="text-center ">有效</th>
@@ -86,6 +88,15 @@
                                         <td data-label="付款金额"><a href="{% url 'payments:payment_detail' contract.id %}">
                                             {% if contract.total_payment %}
                                                 {{ contract.total_payment|comma }}{% endif %}</a></td>
+                                    <td data-label="成本金额">
+                                            {% if contract.total_cost %}
+                                                {{ contract.total_cost|comma }}{% endif %}</td>
+                                        <td data-label="增值税额">
+                                            {% if contract.total_tax %}
+                                                {{ contract.total_tax|comma }}{% endif %}</td>
+
+
+
                                         <td data-label="付款比例">
                                             {% if contract.payment_rate %}{% if contract.payment_rate > 1 %}
                                                 <span class="alert-color"><i class="fi-alert"></i></span>{% endif %}
@@ -126,6 +137,12 @@
                                                         href="{% url 'payments:payment_detail' supple.id %}">
                                                     {% if supple.total_payment %}
                                                         {{ supple.total_payment|comma }}{% endif %}</a></td>
+                                            <td data-label="成本金额">
+                                            {% if contract.total_cost %}
+                                                {{ contract.total_cost|comma }}{% endif %}</td>
+                                        <td data-label="增值税额">
+                                            {% if contract.total_tax %}
+                                                {{ contract.total_tax|comma }}{% endif %}</td>
                                                 <td data-label="付款比例">
                                                     {% if supple.payment_rate %}{% if supple.payment_rate > 1 %}
                                                         <span class="alert-color"><i class="fi-alert"></i></span>
