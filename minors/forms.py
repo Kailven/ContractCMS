@@ -17,4 +17,4 @@ class DirectRequisitionForm(forms.ModelForm):
 class DirectPaymentForm(forms.ModelForm):
     class Meta:
         model = DirectPayment
-        fields = ('amount', 'record', 'payday', 'rate', 'text')
+        fields = ('amount', 'record', 'tax', 'payday', 'rate', 'text')

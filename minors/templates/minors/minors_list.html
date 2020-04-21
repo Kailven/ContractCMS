@@ -27,7 +27,7 @@
                     </li>
 
                     <li class="accordion-item" data-accordion-item>
-                        <a href="/" class="accordion-title rem-1">新增非合同付款</a>
+                        <a href="/" class="accordion-title rem-1">新增非合同付款记录</a>
                         <div class="accordion-content" data-tab-content>
                             <form action="{% url 'minors:minor_add' %}" method="post">
                                 <div class="grid-container">
@@ -90,6 +90,8 @@
                                     <th class="text-center">对方公司</th>
                                     <th class="text-center">请款金额</th>
                                     <th class="text-center">付款金额</th>
+                                    <th class="text-center">成本总额</th>
+                                    <th class="text-center">增值税额</th>
                                     <th class="text-center">类别</th>
                                     <th class="text-center">备注</th>
                                     <th class="text-center">操作</th>
@@ -106,6 +108,8 @@
                                         <td data-label="付款单位">{{ directcost.supplier }}</td>
                                         <td data-label="请款金额"><a href="{% url 'minors:req_list' directcost.id %}">{{ directcost.total_reqs|comma }}</a></td>
                                         <td data-label="付款金额"><a href="{% url 'minors:pay_list' directcost.id %}">{{ directcost.total_pays|comma }}</a></td>
+                                        <td data-label="成本总额">{{ directcost.total_cost|comma }}</td>
+                                        <td data-label="增值税额">{{ directcost.total_tax|comma }}</td>
                                         <td data-label="类别">{{ directcost.subject.name }}</td>
                                         <td data-label="备注">{{ directcost.text }}</td>
                                         <td data-label="操作">

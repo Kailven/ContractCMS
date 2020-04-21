@@ -23,7 +23,7 @@ class DirectCost(models.Model):
             reqs = self.directreqs.all().aggregate(Sum('amount'))['amount__sum']
             return reqs
         else:
-            return None
+            return 0
 
     @property
     def total_pays(self):
@@ -31,7 +31,18 @@ class DirectCost(models.Model):
             pays = self.directpayments.all().aggregate(Sum('amount'))['amount__sum']
             return pays
         else:
-            return None
+            return 0
+
+    @property
+    def total_tax(self):
+        if self.directpayments.all().count():
+            return self.directpayments.all().aggregate(Sum('tax'))['tax__sum']
+        return 0
+
+    @property
+    def total_cost(self):
+        if self.directpayments.all().count():
+            return self.total_pays - self.total_tax
 
     class Meta:
         ordering = ('subject', 'created')
@@ -64,7 +75,8 @@ class DirectPayment(models.Model):
     amount = models.DecimalField(max_digits=16, decimal_places=2, verbose_name='付款金额')
     record = models.CharField(max_length=4, verbose_name='凭证号', null=True, blank=True)
     payday = models.DateField(verbose_name='付款时间')
-    rate = models.DecimalField(max_digits=6, decimal_places=4, verbose_name='增值税率',default=0)
+    tax = models.DecimalField(max_digits=16, decimal_places=2, verbose_name='增值税额', default=0)
+    rate = models.DecimalField(max_digits=6, decimal_places=4, verbose_name='增值税率', default=0)
     text = models.TextField(blank=True, null=True, verbose_name='付款备注')
     created = models.DateTimeField(auto_now_add=True, verbose_name='创建时间', db_index=True)
     updated = models.DateTimeField(auto_now=True, verbose_name='更新时间')
