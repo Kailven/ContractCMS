@@ -5,6 +5,7 @@ from django.db.models import Sum
 from decimal import Decimal
 from django.utils import timezone
 
+
 class Company(models.Model):
     name = models.CharField(max_length=40, verbose_name='公司名称')
     created = models.DateTimeField(auto_now_add=True, verbose_name='创建时间', db_index=True)
@@ -68,7 +69,7 @@ class Contract(models.Model):
     amount = models.DecimalField(max_digits=16, decimal_places=2, verbose_name='初始金额')
     definite = models.DecimalField(max_digits=16, decimal_places=2, verbose_name='决算金额', blank=True, null=True)
     active = models.BooleanField(default=True, verbose_name='有效')
-    is_cost = models.BooleanField(default=True,verbose_name='是否进成本')
+    is_cost = models.BooleanField(default=True, verbose_name='是否进成本')
     jgc = models.BooleanField(default=False, verbose_name='甲供材')
     text = models.TextField(blank=True, null=True, verbose_name='合同条款摘要')
     master = models.PositiveIntegerField(null=True, blank=True, verbose_name='补充合同')
@@ -102,13 +103,15 @@ class Contract(models.Model):
             return Contract.objects.filter(master=self.id)
         return None
 
+    # 总发票金额
     def total_requisition(self):
         if self.requisitions.all().count():
             reqs = self.requisitions.all().aggregate(Sum('invoice'))['invoice__sum']
             return reqs
         else:
-            return None
+            return 0
 
+    # 付款比例
     def requisition_rate(self):
         if self.definite and self.total_requisition():
             return self.total_requisition() / self.definite
@@ -117,30 +120,35 @@ class Contract(models.Model):
         else:
             return None
 
+    # 总付款金额
     def total_payment(self):
         if self.payments.all().count():
             return self.payments.all().aggregate(Sum('amount'))['amount__sum']
         else:
-            return None
+            return 0
 
+    # 总付款比例
     def payment_rate(self):
         if self.total_payment() and self.definite:
-            return self.total_payment()/self.definite
+            return self.total_payment() / self.definite
         elif self.total_payment() and self.amount:
             return self.total_payment() / self.amount
         else:
             return None
 
+    # 总已经收到发票的税金
     def total_tax(self):
         if self.payments.all().count():
             return self.payments.all().aggregate(Sum('tax'))['tax__sum']
         return 0
 
+    # 总发票-税金 = 总无税金额, 即按照发票口径的开发成本
     def total_cost(self):
         if self.payments.all().count():
             return self.total_payment() - self.total_tax()
         return 0
 
+    # 剩余应付
     def remaining_payment(self):
         if self.total_payment() and self.definite:
             return self.definite - self.total_payment()
@@ -151,7 +159,28 @@ class Contract(models.Model):
         else:
             return 0
 
+    # 1.3版本新增 统计总的应付, 预付, 和通过付款金额计算出开发成本
+
+    # 预付合计数 = 手工录入, 不允许收到票的预付存在. 每次填写支付的时候填写
+    @property
+    def total_prepaid(self):
+        if self.payments.all().count():
+            return self.payments.all().aggregate(Sum('prepaid'))['prepaid__sum']
+        return 0
+
+    # 应付合计数 = 手工填写付款中的每次应付账款合计数
+    @property
+    def total_payable(self):
+        if self.payments.all().count():
+            return self.payments.all().aggregate(Sum('payable'))['payable__sum']
+        return 0
+
+    # 开发成本 由于过程中如果只录入发票金额, 但是还没有录入应付或者预付, 则结果就不正确, 所以必须使用总金额法
+    @property
+    def development_cost(self):
+        return self.total_payment() - self.total_prepaid+ self.total_payable - self.total_tax()
+
     class Meta:
-        ordering = ('subject','index', 'created')
+        ordering = ('subject', 'index', 'created')
         verbose_name = '合同'
         verbose_name_plural = '合同'

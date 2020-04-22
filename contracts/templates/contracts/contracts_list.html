@@ -56,17 +56,16 @@
                                     <th class="text-center">决算金额</th>
                                     <th class="text-center"><span data-tooltip tabindex="2"
                                                                   title="点击金额查看请款详情">发票金额</span></th>
-                                    <th class="text-center">请款比例</th>
                                     <th class="text-center"><span data-tooltip tabindex="2"
                                                                   title="点击金额查看付款详情">付款金额</span></th>
                                     <th class="text-center">未付金额</th>
-
-                                    <th class="text-center">成本金额</th>
                                     <th class="text-center">增值税额</th>
-
                                     <th class="text-center">付款比例</th>
+                                    {#                                    1.3版本新增 应付, 预付, 从已付计算出开发成本#}
+                                    <th class="text-center">应付合计</th>
+                                    <th class="text-center">预付合计</th>
+                                    <th class="text-center">开发成本</th>
                                     <th class="text-center hide-for-small-only">签订时间</th>
-
                                     <th class="text-center ">印花税金额</th>
                                     <th class="text-center ">有效</th>
                                     <th class="text-center ">入成本</th>
@@ -88,18 +87,10 @@
                                         <td data-label="发票金额"><a href="{% url 'requisitions:req_detail' contract.id %}">
                                             {% if contract.total_requisition %}
                                                 {{ contract.total_requisition|comma }}{% endif %}</a></td>
-                                        <td data-label="请款比例">
-                                            {% if contract.requisition_rate %}{% if contract.requisition_rate > 1 %}
-                                                <span class="alert-color"><i class="fi-alert"></i></span>{% endif %}
-                                                {{ contract.requisition_rate|rate }}{% endif %}</td>
                                         <td data-label="付款金额"><a href="{% url 'payments:payment_detail' contract.id %}">
                                             {% if contract.total_payment %}
                                                 {{ contract.total_payment|comma }}{% endif %}</a></td>
                                         <td data-label="未付金额">{{ contract.remaining_payment|comma }}</td>
-
-                                        <td data-label="成本金额">
-                                            {% if contract.total_cost %}
-                                                {{ contract.total_cost|comma }}{% endif %}</td>
                                         <td data-label="增值税额">
                                             {% if contract.total_tax %}
                                                 {{ contract.total_tax|comma }}{% endif %}</td>
@@ -107,13 +98,21 @@
                                             {% if contract.payment_rate %}{% if contract.payment_rate > 1 %}
                                                 <span class="alert-color"><i class="fi-alert"></i></span>{% endif %}
                                                 {{ contract.payment_rate|rate }}{% endif %}</td>
+{#1.3版本新增#}
+                                        <td data-label="应付合计">
+                                            {% if contract.total_payable %}
+                                                {{ contract.total_payable|comma }}{% endif %}</td>
+                                        <td data-label="预付合计">
+                                            {% if contract.total_prepaid %}
+                                                {{ contract.total_prepaid|comma }}{% endif %}</td>
+                                        <td data-label="开发成本">
+                                            {% if contract.development_cost %}
+                                                {{ contract.development_cost|comma }}{% endif %}</td>
                                         <td data-label="签订时间"
                                             class="hide-for-small-only">{{ contract.sign|date:"Y-m-d" }}</td>
                                         <td data-label="印花税金额">
                                             {{ contract.stamp_amount|comma }}
                                         </td>
-
-
                                         <td data-label="有效">
                                             {% if contract.active %} <i class="fi-check success-color"></i>
                                             {% else %}<i class="fi-x alert-color"></i>
@@ -141,18 +140,11 @@
                                                         href="{% url 'requisitions:req_detail' supple.id %}">
                                                     {% if supple.total_requisition %}
                                                         {{ supple.total_requisition|comma }}{% endif %}</a></td>
-                                                <td data-label="请款比例">
-                                                    {% if supple.requisition_rate %}{% if supple.requisition_rate > 1 %}
-                                                        <span class="alert-color"><i class="fi-alert"></i></span>
-                                                    {% endif %}{{ supple.requisition_rate|rate }}{% endif %}</td>
                                                 <td data-label="付款金额"><a
                                                         href="{% url 'payments:payment_detail' supple.id %}">
                                                     {% if supple.total_payment %}
                                                         {{ supple.total_payment|comma }}{% endif %}</a></td>
                                                 <td data-label="未付金额">{{ supple.remaining_payment|comma }}</td>
-                                                <td data-label="成本金额">
-                                                    {% if supple.total_cost %}
-                                                        {{ supple.total_cost|comma }}{% endif %}</td>
                                                 <td data-label="增值税额">
                                                     {% if supple.total_tax %}
                                                         {{ supple.total_tax|comma }}{% endif %}</td>
@@ -160,6 +152,16 @@
                                                     {% if supple.payment_rate %}{% if supple.payment_rate > 1 %}
                                                         <span class="alert-color"><i class="fi-alert"></i></span>
                                                     {% endif %}{{ supple.payment_rate|rate }}{% endif %}</td>
+{#1#}
+                                                <td data-label="应付合计">
+                                                    {% if supple.total_payable %}
+                                                        {{ supple.total_payable|comma }}{% endif %}</td>
+                                                <td data-label="预付合计">
+                                                    {% if supple.total_prepaid %}
+                                                        {{ supple.total_prepaid|comma }}{% endif %}</td>
+                                                <td data-label="开发成本">
+                                                    {% if supple.development_cost %}
+                                                        {{ supple.development_cost|comma }}{% endif %}</td>
                                                 <td data-label="签订时间"
                                                     class="hide-for-small-only">{{ supple.sign|date:"Y-m-d" }}</td>
                                                 <td data-label="印花税金额">

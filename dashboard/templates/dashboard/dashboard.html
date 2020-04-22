@@ -12,6 +12,30 @@
     <div class="grid-container">
         <h2>快速开始</h2>
 {#        新功能提示#}
+        <h3 class="type-sidelines"><span><i class="fi-star primary-color">&nbsp;</i>1.3版本新功能</span></h3>
+        <div class="cell ">
+                <div class="card shadow" data-equalizer-watch>
+                    <div class="card-divider">
+                        <span class="primary-color"><i class="fi-star"></i></span><span>&nbsp;&nbsp;支持应付与预付特性及印花税</span>
+                    </div>
+                    <div class="card-section">
+                        <h4>应付与预付特性</h4>
+                        <p class="h6">在每次录入<span class="h5 label">合同付款</span>时，可以根据需要选择录入应付账款和预付账款的性质</p>
+                        <p class="h6">收到发票一律不得录入预付账款数字</p>
+                        <p class="h6">无发票的预付账款，新增一条付款记录，仅录入支付金额，无需录入增值税，并将对应的金额填写在预付账款栏目内</p>
+                        <p class="h6">预付账款收到发票转入成本的时候，新增一条付款记录，仅录入增值税金额，并在预付账款栏目内录入对应的负数</p>
+                        <p class="h6">收到应付账款发票不付款时，新增一条付款记录，仅录入增值税额，并将金额录入到应付账款栏目内</p>
+                        <p class="h6">支付应付账款时，新增一条付款记录，仅录入全额付款金额，增值税额为0，并在应付账款栏目内录入对应的负数</p>
+                        <p><a href="{% url 'contracts:contract_listall' %}">合同列表</a>中增加了上述项目以及开发成本的显示</p>
+                        <p>非合同付款不支持应付与预付特性</p>
+                        <hr>
+                        <h4>支持印花税类型及金额</h4>
+                        <p>管理员可在后台修改印花税类型及金额</p>
+                        <p><a href="{% url 'contracts:contract_listall' %}">合同列表</a>中增加了成本金额和增值税金额的显示</p>
+                    </div>
+                </div>
+            </div>
+
         <h3 class="type-sidelines"><span><i class="fi-star primary-color">&nbsp;</i>1.2版本新功能</span></h3>
         <div class="cell ">
                 <div class="card shadow" data-equalizer-watch>
@@ -27,8 +51,6 @@
                     </div>
                 </div>
             </div>
-
-
 
 
         {#合同信息录入说明部分#}

@@ -56,81 +56,92 @@
                                 <tbody>
                                 <tr>
                                     <td data-label="原始金额">{{ contract.amount|comma }}</td>
-                                    <td data-label="决算金额">{% if contract.definite %}{{ contract.definite|comma }}{% endif %}</td>
+                                    <td data-label="决算金额">
+                                        {% if contract.definite %}{{ contract.definite|comma }}{% endif %}</td>
                                     <td data-label="累计请款">{% if contract.total_requisition %}
                                         {{ contract.total_requisition|comma }}
                                     {% endif %}</td>
-                                    <td data-label="请款比例">{% if contract.requisition_rate %}{% if contract.requisition_rate > 1 %}
-                                        <span class="alert-color"><i class="fi-alert"></i></span>{% endif %}
-                                        {{ contract.requisition_rate|rate }}{% endif %}</td>
-                                    <td data-label="累计付款">{% if contract.total_payment %}{{ contract.total_payment|comma }}
-                                    {% endif %}</td>
+                                    <td data-label="请款比例">
+                                        {% if contract.requisition_rate %}{% if contract.requisition_rate > 1 %}
+                                            <span class="alert-color"><i class="fi-alert"></i></span>{% endif %}
+                                            {{ contract.requisition_rate|rate }}{% endif %}</td>
+                                    <td data-label="累计付款">
+                                        {% if contract.total_payment %}{{ contract.total_payment|comma }}
+                                        {% endif %}</td>
                                     <td data-label="增值税额">{% if contract.total_tax %}{{ contract.total_tax|comma }}
                                     {% endif %}</td>
-                                    <td data-label="付款比例">{% if contract.payment_rate %}{% if contract.payment_rate > 1 %}
-                                        <span class="alert-color"><i class="fi-alert"></i></span>{% endif %}
-                                        {{ contract.payment_rate|rate }}{% endif %}</td>
-
+                                    <td data-label="付款比例">
+                                        {% if contract.payment_rate %}{% if contract.payment_rate > 1 %}
+                                            <span class="alert-color"><i class="fi-alert"></i></span>{% endif %}
+                                            {{ contract.payment_rate|rate }}{% endif %}</td>
                                 </tr>
                                 </tbody>
                             </table>
-                            <div class="cell text-left"><p><strong>合同节点说明：<br></strong>{{ contract.text|show_as_para|safe }}</p></div>
+                            <div class="cell text-left"><p>
+                                <strong>合同节点说明：<br></strong>{{ contract.text|show_as_para|safe }}</p></div>
                         </div>
-
-
                     </div>
                 </div>
                 <div class="grid-x grid-padding-x text-center">
                     <div class="cell">
-                    {% if payments.count %}
-                        <h3 class="text-center type-sidelines"><span>合同付款记录</span></h3>
-                        <table class="responsive-card-table unstriped">
-                            <thead>
-                            <tr>
-                                <th class="text-center">序号</th>
-                                <th class="text-center">付款金额</th>
-                                <th class="text-center">增值税额</th>
-                                <th class="text-center">付款时间</th>
-                                <th class="text-center">凭证号</th>
-                                <th class="text-center">增值税率</th>
-                                <th class="text-center">付款说明</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {% for payment in payments %}
+                        {% if payments.count %}
+                            <h3 class="text-center type-sidelines"><span>合同付款记录</span></h3>
+                            <table class="responsive-card-table unstriped">
+                                <thead>
                                 <tr>
-                                    <td data-label="序号" >{{ forloop.counter }}</td>
-                                    <td data-label="付款金额" ><a href="{% url 'payments:payment_edit' contract.id payment.id %}">{{ payment.amount|comma }}</a></td>
-                                    <td data-label="增值税额" >{{ payment.tax|comma }}</td>
-                                    <td data-label="请款时间" >{{ payment.payday|date:"Y-m-d" }}</td>
-                                    <td data-label="凭证号" >{% if payment.record %}{{ payment.payday|date:"Y年m月-" }}{{ payment.record|record }}{% else %}<span class="alert-color"><i class="fi-alert"></i></span>请注意及时补充凭证号{% endif %}</td>
-                                    <td data-label="增值税率" >{{ payment.rate|rate }}</td>
-                                    <td data-label="请款说明" >{{ payment.text }}</td>
+                                    <th class="text-center">序号</th>
+                                    <th class="text-center">付款金额</th>
+                                    <th class="text-center">增值税额</th>
+                                    <th class="text-center">付款时间</th>
+                                    <th class="text-center">凭证号</th>
+                                    <th class="text-center">增值税率</th>
+                                    <th class="text-center">应付账款</th>
+                                    <th class="text-center">预付账款</th>
+                                    <th class="text-center">付款说明</th>
                                 </tr>
-                            {% endfor %}
-                            </tbody>
-                        </table>
-                    {% else %}
-                        <h3 class="text-center type-sidelines"><span>无付款记录</span></h3>
-                    {% endif %}
+                                </thead>
+                                <tbody>
+                                {% for payment in payments %}
+                                    <tr>
+                                        <td data-label="序号">{{ forloop.counter }}</td>
+                                        <td data-label="付款金额"><a
+                                                href="{% url 'payments:payment_edit' contract.id payment.id %}">{{ payment.amount|comma }}</a>
+                                        </td>
+                                        <td data-label="增值税额">{{ payment.tax|comma }}</td>
+                                        <td data-label="请款时间">{{ payment.payday|date:"Y-m-d" }}</td>
+                                        <td data-label="凭证号">{% if payment.record %}{{ payment.payday|date:"Y年m月-" }}
+                                            {{ payment.record|record }}{% else %}
+                                            <span class="alert-color"><i class="fi-alert"></i></span>
+                                            请注意及时补充凭证号{% endif %}</td>
+                                        <td data-label="增值税率">{{ payment.rate|rate }}</td>
+                                        <td data-label="应付账款">{{ payment.payable|comma }}</td>
+                                        <td data-label="预付账款">{{ payment.prepaid|comma }}</td>
+                                        <td data-label="请款说明">{{ payment.text }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <h3 class="text-center type-sidelines"><span>无付款记录</span></h3>
+                        {% endif %}
                     </div>
                 </div>
                 <form action="." method="post">
-                <div class="grid-x grid-padding-x align-center-middle">
-                    <div class="cell">
-                        <h3 class="text-center type-sidelines"><span>新增付款记录</span></h3>
+                    <div class="grid-x grid-padding-x align-center-middle">
+                        <div class="cell">
+                            <h3 class="text-center type-sidelines"><span>新增付款记录</span></h3>
+                        </div>
+                        {% for field in form %}
+                            <div class="cell medium-3 medium-text-right">{{ field.label_tag }}</div>
+                            <div class="cell medium-6 larget-3">{{ field }}</div>
+                            <div class="cell medium-3 larget-3">{{ field.errors }}</div>
+                        {% endfor %}
+                        <div class="cell text-center">{{ form.non_field_errors }}</div>
+                        {% csrf_token %}
+                        <div class="cell text-center">
+                            <input type="submit" class="button" value="提交">
+                        </div>
                     </div>
-                    {% for field in form %}
-                    <div class="cell medium-3 medium-text-right">{{ field.label_tag }}</div>
-                    <div class="cell medium-6 larget-3">{{ field }}</div>
-                    <div class="cell medium-3 larget-3">{{ field.errors }}</div>
-                    {% endfor %}
-                    <div class="cell text-center">{{ form.non_field_errors }}</div>
-                    {% csrf_token %}
-                    <div class="cell text-center">
-                        <input type="submit" class="button" value="提交">
-                    </div>
-                </div>
                 </form>
             </div>
         </div>

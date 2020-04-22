@@ -8,7 +8,7 @@ register = template.Library()
 def total_posts(decimal_obj):
     if decimal_obj:
         return "{:,.2f}".format(decimal_obj)
-    return ""
+    return "0"
 
 
 @register.filter(name='rate')

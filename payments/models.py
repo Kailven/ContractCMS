@@ -10,6 +10,11 @@ class Payment(models.Model):
     text = models.TextField(blank=True, null=True, verbose_name='付款备注')
     tax = models.DecimalField(max_digits=16, decimal_places=2, verbose_name='增值税额', default=0)
     rate = models.DecimalField(max_digits=6, decimal_places=4, verbose_name='增值税率')
+
+    # 1.3版本新增, 预付和应付特性
+    prepaid = models.DecimalField(max_digits=16, decimal_places=2, verbose_name='预付款项', default=0)
+    payable = models.DecimalField(max_digits=16, decimal_places=2, verbose_name='应付账款', default=0)
+
     created = models.DateTimeField(auto_now_add=True, verbose_name='创建时间', db_index=True)
     updated = models.DateTimeField(auto_now=True, verbose_name='更新时间')
 

@@ -5,4 +5,4 @@ from .models import Payment
 class PaymentForm(forms.ModelForm):
     class Meta:
         model = Payment
-        fields = ('amount', 'tax', 'record', 'payday', 'rate', 'text')
+        fields = ('amount', 'tax', 'record', 'payday', 'rate', 'payable', 'prepaid', 'text')
