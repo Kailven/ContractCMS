@@ -22,18 +22,18 @@
         <div class="grid-container">
             <h1 class="text-center">{% if contract %}新增<span class="primary-color">{{ contract.name }}</span>
                 的补充合同{% else %}新增合同{% endif %}</h1>
-        <div class="grid-x align-center-middle grid-padding-x ">
-            <div class="cell small-10 medium-3 medium-text-right">
-                <label for="company_id">所属公司:</label>
-            </div>
-            <div class="cell small-10 medium-6">
-                <select name="company_id" id="company_id">
-                    <option value="1">玛宝</option>
-                    <option value="2">天虹</option>
-                </select>
-            </div>
-            <div class="cell small-10 medium-3 text-center"></div>
-        </div>
+{#        <div class="grid-x align-center-middle grid-padding-x ">#}
+{#            <div class="cell small-10 medium-3 medium-text-right">#}
+{#                <label for="company_id">所属公司:</label>#}
+{#            </div>#}
+{#            <div class="cell small-10 medium-6">#}
+{#                <select name="company_id" id="company_id">#}
+{#                    <option value="1">玛宝</option>#}
+{#                    <option value="2">天虹</option>#}
+{#                </select>#}
+{#            </div>#}
+{#            <div class="cell small-10 medium-3 text-center"></div>#}
+{#        </div>#}
 
             {% for field in form %}
                 <div class="grid-x align-center-middle grid-padding-x ">

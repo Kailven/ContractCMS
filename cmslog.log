@@ -2391,3 +2391,84 @@ Wed, 22 Apr 2020 14:24:23 views.py[line:46] INFO lee0709 | payment_add | amount=
 Wed, 22 Apr 2020 14:25:03 views.py[line:46] INFO lee0709 | payment_add | amount=0 | id=84 | rate=0.06
 Wed, 22 Apr 2020 14:25:48 log.py[line:228] WARNING Not Found: /favicon.ico
 Wed, 22 Apr 2020 14:30:59 autoreload.py[line:217] INFO D:\Coding\ContractCMS\payments\models.py changed, reloading.
+Wed, 22 Apr 2020 14:53:28 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\views.py changed, reloading.
+Wed, 22 Apr 2020 15:33:36 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\forms.py changed, reloading.
+Wed, 22 Apr 2020 15:36:26 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\forms.py changed, reloading.
+Wed, 22 Apr 2020 15:36:35 log.py[line:228] WARNING Not Found: /favicon.ico
+Wed, 22 Apr 2020 15:37:47 log.py[line:228] ERROR Internal Server Error: /contracts/add/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\account\permission_decorator.py", line 8, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 101, in contract_add
+    new_contract.company = Company.objects.get(id=company_id)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\query.py", line 408, in get
+    self.model._meta.object_name
+contracts.models.Company.DoesNotExist: Company matching query does not exist.
+Wed, 22 Apr 2020 15:40:41 log.py[line:228] ERROR Internal Server Error: /contracts/add/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\account\permission_decorator.py", line 8, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 101, in contract_add
+    new_contract.company = Company.objects.get(id=company_id)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\query.py", line 408, in get
+    self.model._meta.object_name
+contracts.models.Company.DoesNotExist: Company matching query does not exist.
+Wed, 22 Apr 2020 15:42:10 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\views.py changed, reloading.
+Wed, 22 Apr 2020 15:42:28 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\views.py changed, reloading.
+Wed, 22 Apr 2020 15:42:33 log.py[line:228] ERROR Internal Server Error: /contracts/add/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\account\permission_decorator.py", line 8, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 101, in contract_add
+    new_contract.company = form.company.id
+AttributeError: 'ContractForm' object has no attribute 'company'
+Wed, 22 Apr 2020 15:59:52 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\views.py changed, reloading.
+Wed, 22 Apr 2020 15:59:58 log.py[line:228] ERROR Internal Server Error: /contracts/add/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\account\permission_decorator.py", line 8, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 106, in contract_add
+    company=get_object_or_404(Company, id=form.company.id)).filter(
+AttributeError: 'ContractForm' object has no attribute 'company'
+Wed, 22 Apr 2020 16:00:22 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\views.py changed, reloading.
+Wed, 22 Apr 2020 16:00:26 views.py[line:123] INFO lee0709 | contract_add | name=123321 | id=76 | amount=123333 | def=111
+Wed, 22 Apr 2020 16:01:57 log.py[line:228] WARNING Not Found: /favicon.ico
+Wed, 22 Apr 2020 16:03:04 views.py[line:123] INFO lee0709 | contract_add | name=1232321 | id=77 | amount=66666 | def=77777
+Wed, 22 Apr 2020 16:03:27 views.py[line:123] INFO lee0709 | contract_add | name=121212 | id=78 | amount=0 | def=-0.02
+Wed, 22 Apr 2020 16:04:56 views.py[line:123] INFO lee0709 | contract_add | name=321132 | id=79 | amount=123 | def=321320.99

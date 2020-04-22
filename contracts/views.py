@@ -96,14 +96,14 @@ def contract_add(request, master_id=None):
         form = ContractForm(request.POST)
 
         if form.is_valid():
-            company_id = request.POST.get("company_id")
+            # company_id = request.POST.get("company_id")
             new_contract = form.save(commit=False)
-            new_contract.company = Company.objects.get(id=company_id)
+            print(new_contract.company.id)
 
             index = new_contract.company.name + '(' + new_contract.sign.strftime(
                 "%Y") + ')' + '-' + new_contract.subject.tag + '-' + str(
                 Contract.objects.filter(subject=new_contract.subject,
-                                        company=get_object_or_404(Company, id=company_id)).filter(
+                                        company=get_object_or_404(Company, id=new_contract.company.id)).filter(
                     master__isnull=True).count() + 1).zfill(3)
             master_contract_id = request.POST.get('master', None)
             if master_contract_id:

@@ -11,47 +11,67 @@
 {% block main %}
     <div class="grid-container">
         <h2>快速开始</h2>
-{#        新功能提示#}
+        {#        新功能提示#}
         <h3 class="type-sidelines"><span><i class="fi-star primary-color">&nbsp;</i>1.3版本新功能</span></h3>
         <div class="cell ">
-                <div class="card shadow" data-equalizer-watch>
-                    <div class="card-divider">
-                        <span class="primary-color"><i class="fi-star"></i></span><span>&nbsp;&nbsp;支持应付与预付特性及印花税</span>
-                    </div>
-                    <div class="card-section">
-                        <h4>应付与预付特性</h4>
-                        <p class="h6">在每次录入<span class="h5 label">合同付款</span>时，可以根据需要选择录入应付账款和预付账款的性质</p>
-                        <p class="h6">收到发票一律不得录入预付账款数字</p>
-                        <p class="h6">无发票的预付账款，新增一条付款记录，仅录入支付金额，无需录入增值税，并将对应的金额填写在预付账款栏目内</p>
-                        <p class="h6">预付账款收到发票转入成本的时候，新增一条付款记录，仅录入增值税金额，并在预付账款栏目内录入对应的负数</p>
-                        <p class="h6">收到应付账款发票不付款时，新增一条付款记录，仅录入增值税额，并将金额录入到应付账款栏目内</p>
-                        <p class="h6">支付应付账款时，新增一条付款记录，仅录入全额付款金额，增值税额为0，并在应付账款栏目内录入对应的负数</p>
-                        <p><a href="{% url 'contracts:contract_listall' %}">合同列表</a>中增加了上述项目以及开发成本的显示</p>
-                        <p>非合同付款不支持应付与预付特性</p>
-                        <hr>
-                        <h4>支持印花税类型及金额</h4>
-                        <p>管理员可在后台修改印花税类型及金额</p>
-                        <p><a href="{% url 'contracts:contract_listall' %}">合同列表</a>中增加了成本金额和增值税金额的显示</p>
-                    </div>
+            <div class="card shadow" data-equalizer-watch>
+                <div class="card-divider">
+                    <span class="primary-color"><i class="fi-star"></i></span><span>&nbsp;&nbsp;支持应付与预付特性及印花税</span>
+                </div>
+                <div class="card-section">
+                    <h4>应付与预付特性</h4>
+                    <p class="h6">在每次录入<span class="h5 label">合同付款</span>时，可以根据需要选择录入应付账款和预付账款的性质</p>
+                    <p class="h6">收到发票一律不得录入预付账款数字</p>
+                    <p class="h6">无发票的预付账款，新增一条付款记录，仅录入支付金额，无需录入增值税，并将对应的金额填写在预付账款栏目内</p>
+                    <p class="h6">预付账款收到发票转入成本的时候，新增一条付款记录，仅录入增值税金额，并在预付账款栏目内录入对应的负数</p>
+                    <p class="h6">收到应付账款发票不付款时，新增一条付款记录，仅录入增值税额，并将金额录入到应付账款栏目内</p>
+                    <p class="h6">支付应付账款时，新增一条付款记录，仅录入全额付款金额，增值税额为0，并在应付账款栏目内录入对应的负数</p>
+                    <p><a href="{% url 'contracts:contract_listall' %}">合同列表</a>中增加了上述项目以及开发成本的显示</p>
+                    <p>非合同付款不支持应付与预付特性</p>
+                    <hr>
+                    <h4>支持印花税类型及金额</h4>
+                    <p>管理员可在后台修改印花税类型及金额</p>
+                    <p><a href="{% url 'contracts:contract_listall' %}">合同列表</a>中增加了成本金额和增值税金额的显示</p>
                 </div>
             </div>
+        </div>
 
         <h3 class="type-sidelines"><span><i class="fi-star primary-color">&nbsp;</i>1.2版本新功能</span></h3>
         <div class="cell ">
-                <div class="card shadow" data-equalizer-watch>
-                    <div class="card-divider">
-                        <span class="primary-color"><i class="fi-star"></i></span><span>&nbsp;&nbsp;支持在付款时候输入增值税额, 自动计算成本金额</span>
-                    </div>
-                    <div class="card-section">
-                        <h4>新增增值税额录入</h4>
-                        <p class="h6">在每次录入<span class="h5 label">合同付款</span>和<span class="h5 label">非合同付款</span>时，增加了需要录入增值税的栏目，默认金额是0</p>
-                        <hr>
-                        <h4>合同清单中可以显示增值税和成本金额</h4>
-                        <p><a href="{% url 'contracts:contract_listall' %}">合同列表</a>和<a href="{% url 'minors:minor_list' %}">非合同付款列表</a>中增加了成本金额和增值税金额的显示</p>
-                    </div>
+            <div class="card shadow" data-equalizer-watch>
+                <div class="card-divider">
+                    <span class="primary-color"><i
+                            class="fi-star"></i></span><span>&nbsp;&nbsp;支持在付款时候输入增值税额, 自动计算成本金额</span>
+                </div>
+                <div class="card-section">
+                    <h4>新增增值税额录入</h4>
+                    <p class="h6">在每次录入<span class="h5 label">合同付款</span>和<span class="h5 label">非合同付款</span>时，增加了需要录入增值税的栏目，默认金额是0
+                    </p>
+                    <hr>
+                    <h4>合同清单中可以显示增值税和成本金额</h4>
+                    <p><a href="{% url 'contracts:contract_listall' %}">合同列表</a>和<a
+                            href="{% url 'minors:minor_list' %}">非合同付款列表</a>中增加了成本金额和增值税金额的显示</p>
                 </div>
             </div>
+        </div>
 
+
+        <h3 class="type-sidelines"><span><i class="fi-star primary-color">&nbsp;</i>1.1版本新功能</span></h3>
+        <div class="cell ">
+            <div class="card shadow" data-equalizer-watch>
+                <div class="card-divider">
+                    <span class="primary-color"><i class="fi-star"></i></span><span>&nbsp;&nbsp;现在支持多个公司</span>
+                </div>
+                <div class="card-section">
+                    <h4>可添加多个公司</h4>
+                    <p class="h6">需联系管理员进行添加新公司, 之后可以在新增合同的时候选择公司</p>
+                    <hr>
+                    <h4>提高默认合同列表加载速度</h4>
+                    <p>默认的合同列表显示最近添加的15个合同，需要显示全部合同，通过左侧菜单内<span class="h5 label">可用操作</span>&nbsp;-&nbsp;<span
+                            class="h5 label">显示全部合同</span>，推荐使用搜索功能。</p>
+                </div>
+            </div>
+        </div>
 
         {#合同信息录入说明部分#}
         <h3 class="type-sidelines"><span><i class="fi-page-export primary-color">&nbsp;</i>合同信息录入</span></h3>
@@ -92,7 +112,8 @@
                     </div>
                     <div class="card-section">
                         <h4>重要提示</h4>
-                        <p>合同的<span class="alert-color">种类</span>和<span class="alert-color">签订时间</span>必须录入正确，用于生成合同索引</p>
+                        <p>合同的<span class="alert-color">种类</span>和<span class="alert-color">签订时间</span>必须录入正确，用于生成合同索引
+                        </p>
                         <p class="alert-color">不支持为补充合同再添加补充合同</p>
                         <hr>
                         <h4>权限</h4>
@@ -185,7 +206,7 @@
         </div>
 
         {#非合同付款说明部分#}
-         <h3 class="type-sidelines"><span><i class="fa fa-credit-card primary-color"></i> 非合同付款操作</span></h3>
+        <h3 class="type-sidelines"><span><i class="fa fa-credit-card primary-color"></i> 非合同付款操作</span></h3>
         <div class="grid-x medium-up-1 large-up-3 grid-margin-x" data-equalizer>
             <div class="cell ">
                 <div class="card shadow" data-equalizer-watch>
@@ -194,7 +215,8 @@
                     </div>
                     <div class="card-section">
                         <h4>添加新非合同请款与付款记录</h4>
-                        <p class="h6">进入<a href="{% url 'minors:minor_list' %}">非合同付款列表页</a>，点击左侧菜单中<span class="h5 label">新增非合同记录</span>，直接新增即可</p>
+                        <p class="h6">进入<a href="{% url 'minors:minor_list' %}">非合同付款列表页</a>，点击左侧菜单中<span
+                                class="h5 label">新增非合同记录</span>，直接新增即可</p>
                         <p class="h6">点击请款金额可进入请款列表，在左侧菜单内点击<span class="h5 label">新增非合同请款</span></p>
                         <p class="h6">付款记录与请款记录的操作类似，在付款记录列表中点击<span class="h5 label">新增非合同付款</span></p>
                     </div>
