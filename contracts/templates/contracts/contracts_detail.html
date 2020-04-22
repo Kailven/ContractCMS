@@ -63,34 +63,41 @@
                             <div class="cell medium-6"><p><strong>合同决算价格：</strong>{% if contract.definite %}
                                 {{ contract.definite|comma }}{% else %}无{% endif %}</p></div>
                             <div class="cell medium-6"><p><strong>累计请款：</strong>{% if contract.total_requisition %}
-                            {{ contract.total_requisition|comma }}
+                                {{ contract.total_requisition|comma }}
                             {% endif %}</p></div>
                             <div class="cell medium-6"><p><strong>请款比例：</strong>
-                            {% if contract.requisition_rate %}{% if contract.requisition_rate > 1 %}<span class="alert-color"><i class="fi-alert"></i></span>{% endif %}{{ contract.requisition_rate|rate }}{% endif %}
-
-
+                                {% if contract.requisition_rate %}{% if contract.requisition_rate > 1 %}
+                                    <span class="alert-color"><i class="fi-alert"></i></span>{% endif %}
+                                    {{ contract.requisition_rate|rate }}{% endif %}
                             </p></div>
                             <div class="cell medium-6"><p><strong>累计付款：</strong>{% if contract.total_payment %}
-                            {{ contract.total_payment|comma }}
+                                {{ contract.total_payment|comma }}
                             {% endif %}</p></div>
                             <div class="cell medium-6"><p><strong>付款比例：</strong>
-                            {% if contract.payment_rate %}{% if contract.payment_rate > 1 %}<span class="alert-color"><i class="fi-alert"></i></span>{% endif %}{{ contract.payment_rate|rate }}{% endif %}
+                                {% if contract.payment_rate %}{% if contract.payment_rate > 1 %}
+                                    <span class="alert-color"><i class="fi-alert"></i></span>{% endif %}
+                                    {{ contract.payment_rate|rate }}{% endif %}
                             </p></div>
-                             <div class="cell medium-6"><p><strong>增值税额：</strong>
-                            {% if contract.total_tax %}{{ contract.total_tax|comma }}{% endif %}
+                            <div class="cell medium-6"><p><strong>增值税额：</strong>
+                                {% if contract.total_tax %}{{ contract.total_tax|comma }}{% endif %}
                             </p></div>
-                             <div class="cell medium-6"><p><strong>成本金额：</strong>
-                            {% if contract.total_cost %}{{ contract.total_cost|comma }}{% endif %}
+                            <div class="cell medium-6"><p><strong>成本金额：</strong>
+                                {% if contract.total_cost %}{{ contract.total_cost|comma }}{% endif %}
                             </p></div>
-                            <div class="cell text-center"><p><strong>合同摘要：<br></strong>{{ contract.text|show_as_para|safe }}</p></div>
+                           <div class="cell medium-6"><p><strong>印花税类型：</strong>
+                               {{ contract.stamp.name}}
+                            </p></div>
+                           <div class="cell medium-6"><p><strong>印花税金额：</strong>
+                               {{ contract.stamp_amount}}
+                            </p></div>
+                            <div class="cell text-center"><p>
+                                <strong>合同摘要：<br></strong>{{ contract.text|show_as_para|safe }}</p></div>
                         </div>
 
                         <div class="callout warning grid-x text-center">
                             <div class="cell">
                                 <h3 class="">其他信息</h3>
                             </div>
-
-
                             <div class="cell medium-6">
                                 {% if contract.is_supple %}
                                     <p>
@@ -120,7 +127,6 @@
                                     </p>
                                 {% endif %}
                             </div>
-
                             <div class="cell medium-6"><p><strong>是否甲供材合同：</strong>{% if contract.jgc %}
                                 <i class="fi-check success-color"></i>
                             {% else %}<i class="fi-x alert-color"></i>

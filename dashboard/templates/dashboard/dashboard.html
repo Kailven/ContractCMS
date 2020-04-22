@@ -12,18 +12,18 @@
     <div class="grid-container">
         <h2>快速开始</h2>
 {#        新功能提示#}
-        <h3 class="type-sidelines"><span><i class="fi-star primary-color">&nbsp;</i>1.1版本新功能</span></h3>
+        <h3 class="type-sidelines"><span><i class="fi-star primary-color">&nbsp;</i>1.2版本新功能</span></h3>
         <div class="cell ">
                 <div class="card shadow" data-equalizer-watch>
                     <div class="card-divider">
-                        <span class="primary-color"><i class="fi-star"></i></span><span>&nbsp;&nbsp;现在支持玛宝和天虹两个公司</span>
+                        <span class="primary-color"><i class="fi-star"></i></span><span>&nbsp;&nbsp;支持在付款时候输入增值税额, 自动计算成本金额</span>
                     </div>
                     <div class="card-section">
-                        <h4>选择玛宝或者天虹公司</h4>
-                        <p class="h6">在<span class="h5 label">新增合同</span>和<span class="h5 label">新增非合同付款</span>时，可以选择玛宝或者天虹公司</p>
+                        <h4>新增增值税额录入</h4>
+                        <p class="h6">在每次录入<span class="h5 label">合同付款</span>和<span class="h5 label">非合同付款</span>时，增加了需要录入增值税的栏目，默认金额是0</p>
                         <hr>
-                        <h4>提高默认合同列表加载速度</h4>
-                        <p>默认的合同列表显示最近添加的15个合同，需要显示全部合同，通过左侧菜单内<span class="h5 label">可用操作</span>&nbsp;-&nbsp;<span class="h5 label">显示全部合同</span>，推荐使用搜索功能。</p>
+                        <h4>合同清单中可以显示增值税和成本金额</h4>
+                        <p><a href="{% url 'contracts:contract_listall' %}">合同列表</a>和<a href="{% url 'minors:minor_list' %}">非合同付款列表</a>中增加了成本金额和增值税金额的显示</p>
                     </div>
                 </div>
             </div>
@@ -172,8 +172,8 @@
                     </div>
                     <div class="card-section">
                         <h4>添加新非合同请款与付款记录</h4>
-                        <p class="h6">进入<a href="{% url 'minors:minor_list' %}">非合同付款列表页</a>，点击左侧菜单中<span class="h5 label">新增非合同记录</span>，直接新增即可。</p>
-                        <p class="h6">点击请款金额可进入请款列表，在左侧菜单内点击<span class="h5 label">新增非合同请款</span>。</p>
+                        <p class="h6">进入<a href="{% url 'minors:minor_list' %}">非合同付款列表页</a>，点击左侧菜单中<span class="h5 label">新增非合同记录</span>，直接新增即可</p>
+                        <p class="h6">点击请款金额可进入请款列表，在左侧菜单内点击<span class="h5 label">新增非合同请款</span></p>
                         <p class="h6">付款记录与请款记录的操作类似，在付款记录列表中点击<span class="h5 label">新增非合同付款</span></p>
                     </div>
                 </div>
@@ -196,7 +196,7 @@
                     </div>
                     <div class="card-section">
                         <h4>权限</h4>
-                        <p>权限配置与合同管理部分相同，非合同记录由合约部人员录入，业务部人员可录入请款，财务人员可录入付款信息。</p>
+                        <p>权限配置与合同管理部分相同，非合同记录由合约部人员录入，业务部人员可录入请款，财务人员可录入付款信息</p>
                     </div>
                 </div>
             </div>

@@ -74,6 +74,7 @@ class Contract(models.Model):
     master = models.PositiveIntegerField(null=True, blank=True, verbose_name='补充合同')
     stamp = models.ForeignKey(Stamp, on_delete=models.CASCADE, related_name='contracts', verbose_name='印花税类型',
                               default=12)
+    stamp_amount = models.DecimalField(max_digits=16, decimal_places=2, verbose_name='印花税金额', default=0)
     created = models.DateTimeField(default=timezone.now, verbose_name='创建时间', db_index=True)
     updated = models.DateTimeField(auto_now=True, verbose_name='更新时间')
 
@@ -103,7 +104,7 @@ class Contract(models.Model):
 
     def total_requisition(self):
         if self.requisitions.all().count():
-            reqs = self.requisitions.all().aggregate(Sum('amount'))['amount__sum']
+            reqs = self.requisitions.all().aggregate(Sum('invoice'))['invoice__sum']
             return reqs
         else:
             return None
@@ -140,6 +141,15 @@ class Contract(models.Model):
             return self.total_payment() - self.total_tax()
         return 0
 
+    def remaining_payment(self):
+        if self.total_payment() and self.definite:
+            return self.definite - self.total_payment()
+
+        elif self.total_payment() and self.amount:
+            return self.amount - self.total_payment()
+
+        else:
+            return 0
 
     class Meta:
         ordering = ('subject','index', 'created')

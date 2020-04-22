@@ -737,3 +737,1285 @@ Wed, 14 Nov 2018 17:50:03 views.py[line:71] INFO lee0709 | minor_edit | name=333
 Wed, 14 Nov 2018 17:50:12 views.py[line:71] INFO lee0709 | minor_edit | name=7777 | id=15 | amount=9999999
 Wed, 14 Nov 2018 17:50:21 views.py[line:101] INFO lee0709 | direct_req_add | id=19 | amount=13288 | invoice=13213
 Wed, 14 Nov 2018 17:50:47 views.py[line:165] INFO lee0709 | direct_payments_add | id=14 | amount=52363981 | rate=0.03
+Mon, 19 Nov 2018 14:48:51 log.py[line:228] WARNING Forbidden (CSRF token missing or incorrect.): /accounts/login/
+Mon, 19 Nov 2018 14:48:51 log.py[line:228] WARNING Not Found: /favicon.ico
+Fri, 28 Dec 2018 14:07:53 views.py[line:44] INFO lee0709 | req_add | amount=300000 | id=8 | invoice=300000
+Sun, 05 May 2019 10:34:11 log.py[line:228] WARNING Not Found: /favicon.ico
+Sun, 05 May 2019 10:52:15 views.py[line:119] INFO minkolee | contract_add | name=天华设计合同 | id=65 | amount=2000000 | def=None
+Sun, 05 May 2019 10:55:43 log.py[line:228] ERROR Internal Server Error: /contracts/add/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\account\permission_decorator.py", line 8, in wrapper
+    return func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 99, in contract_add
+    new_contract.company = Company.objects.get(company_id=company_id)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 390, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 862, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\sql\query.py", line 1164, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\sql\query.py", line 1028, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\sql\query.py", line 1389, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'company_id' into field. Choices are: contracts, created, directcosts, id, name, updated
+Sun, 05 May 2019 10:56:29 views.py[line:121] INFO minkolee | contract_add | name=天华设计合同 | id=66 | amount=1999999.99 | def=None
+Sun, 05 May 2019 10:57:19 views.py[line:44] INFO minkolee | req_add | amount=321321 | id=30 | invoice=33333
+Sun, 05 May 2019 10:57:31 views.py[line:46] INFO minkolee | payment_add | amount=321321 | id=60 | rate=0.1
+Sun, 05 May 2019 10:59:34 views.py[line:163] INFO minkolee | contract_edit | name=天华设计合同 | id=66 | amount=1999999.99 | def=77777777777
+Sun, 05 May 2019 10:59:59 views.py[line:121] INFO minkolee | contract_add | name=天华合同2 | id=67 | amount=777777777777 | def=6666666666
+Sun, 05 May 2019 11:02:20 views.py[line:45] INFO minkolee | minor_add | name=32111111111 | id=1 | amount=321321
+Sun, 05 May 2019 11:02:35 views.py[line:101] INFO minkolee | direct_req_add | id=1 | amount=3333 | invoice=2222
+Sun, 05 May 2019 11:02:55 views.py[line:165] INFO minkolee | direct_payments_add | id=1 | amount=321 | rate=1
+Sun, 05 May 2019 11:09:44 views.py[line:48] INFO minkolee | minor_add | name=321 | id=None | amount=321
+Sun, 05 May 2019 11:10:41 views.py[line:48] INFO minkolee | minor_add | name=321 | id=None | amount=32131
+Sun, 05 May 2019 11:11:36 views.py[line:49] INFO minkolee | minor_add | name=22222 | id=2 | amount=33333
+Sun, 05 May 2019 11:11:45 views.py[line:105] INFO minkolee | direct_req_add | id=2 | amount=111 | invoice=1222
+Sun, 05 May 2019 11:12:01 views.py[line:169] INFO minkolee | direct_payments_add | id=2 | amount=21 | rate=1
+Sun, 05 May 2019 12:38:48 views.py[line:121] INFO minkolee | contract_add | name=coiny | id=68 | amount=212222222 | def=None
+Sun, 05 May 2019 12:39:10 views.py[line:121] INFO minkolee | contract_add | name=coiny321321321 | id=69 | amount=666666 | def=None
+Sun, 05 May 2019 13:24:55 log.py[line:228] WARNING Not Found: /favicon.ico
+Sun, 05 May 2019 13:38:34 views.py[line:121] INFO minkolee | contract_add | name=fdskjljfkldsa | id=70 | amount=32132 | def=321321
+Sun, 05 May 2019 13:40:04 views.py[line:49] INFO minkolee | minor_add | name=321 | id=3 | amount=3000
+Sun, 05 May 2019 13:40:21 views.py[line:105] INFO minkolee | direct_req_add | id=3 | amount=333333333 | invoice=333333
+Sun, 05 May 2019 13:40:41 views.py[line:169] INFO minkolee | direct_payments_add | id=3 | amount=321321 | rate=0.1
+Sun, 05 May 2019 14:41:46 log.py[line:228] ERROR Internal Server Error: /contracts/list/2/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 37, in contract_list
+    contracts = contracts.filter(subject=subject)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 856, in _filter_or_exclude
+    "Cannot filter a query once a slice has been taken."
+AssertionError: Cannot filter a query once a slice has been taken.
+Sun, 05 May 2019 14:41:46 log.py[line:228] WARNING Not Found: /favicon.ico
+Sun, 05 May 2019 14:42:12 log.py[line:228] ERROR Internal Server Error: /contracts/list/1/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 37, in contract_list
+    contracts = contracts.filter(subject=subject)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 856, in _filter_or_exclude
+    "Cannot filter a query once a slice has been taken."
+AssertionError: Cannot filter a query once a slice has been taken.
+Sun, 05 May 2019 14:42:17 log.py[line:228] ERROR Internal Server Error: /contracts/list/2/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 37, in contract_list
+    contracts = contracts.filter(subject=subject)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 856, in _filter_or_exclude
+    "Cannot filter a query once a slice has been taken."
+AssertionError: Cannot filter a query once a slice has been taken.
+Sun, 05 May 2019 14:42:46 log.py[line:228] ERROR Internal Server Error: /contracts/list/1/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 37, in contract_list
+    contracts = contracts.filter(subject=subject)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 856, in _filter_or_exclude
+    "Cannot filter a query once a slice has been taken."
+AssertionError: Cannot filter a query once a slice has been taken.
+Sun, 05 May 2019 14:43:27 log.py[line:228] ERROR Internal Server Error: /contracts/list/1/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 37, in contract_list
+    contracts = contracts.filter(subject=subject)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 856, in _filter_or_exclude
+    "Cannot filter a query once a slice has been taken."
+AssertionError: Cannot filter a query once a slice has been taken.
+Sun, 05 May 2019 14:44:45 log.py[line:228] ERROR Internal Server Error: /contracts/list/1/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 37, in contract_list
+    contracts = contracts.filter(subject=subject)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 856, in _filter_or_exclude
+    "Cannot filter a query once a slice has been taken."
+AssertionError: Cannot filter a query once a slice has been taken.
+Sun, 05 May 2019 14:44:47 log.py[line:228] ERROR Internal Server Error: /contracts/list/1/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 37, in contract_list
+    contracts = contracts.filter(subject=subject)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 856, in _filter_or_exclude
+    "Cannot filter a query once a slice has been taken."
+AssertionError: Cannot filter a query once a slice has been taken.
+Sun, 05 May 2019 14:44:48 log.py[line:228] WARNING Not Found: /favicon.ico
+Sun, 05 May 2019 14:45:13 log.py[line:228] ERROR Internal Server Error: /contracts/list/1/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 37, in contract_list
+    contracts = contracts.filter(subject=subject)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 844, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\db\models\query.py", line 856, in _filter_or_exclude
+    "Cannot filter a query once a slice has been taken."
+AssertionError: Cannot filter a query once a slice has been taken.
+Sun, 05 May 2019 14:47:41 views.py[line:165] INFO minkolee | contract_edit | name=天华合同23333 | id=67 | amount=777777777777.00 | def=6666666666.00
+Sun, 05 May 2019 15:02:39 log.py[line:228] WARNING Not Found: /contracts/list/all/
+Fri, 14 Jun 2019 09:10:35 log.py[line:228] WARNING Not Found: /favicon.ico
+Fri, 14 Jun 2019 09:11:05 views.py[line:49] INFO lee0709 | minor_add | name=临时单位 | id=4 | amount=100000
+Fri, 14 Jun 2019 09:11:17 views.py[line:197] INFO lee0709 | direct_pay_edit | id=1 | amount=321.00 | rate=1.0000
+Fri, 14 Jun 2019 09:11:18 log.py[line:228] ERROR Internal Server Error: /minor/pay/list/1/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\minors\views.py", line 155, in directpayment_list
+    {'directcost': directcost, 'form': form, 'payments': payments})
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 987, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "D:\Coding\ContractCMS\contracts\templatetags\contracts_tag.py", line 28, in record
+    return str_obj.zfill(4)
+AttributeError: 'NoneType' object has no attribute 'zfill'
+Fri, 14 Jun 2019 09:20:45 log.py[line:228] ERROR Internal Server Error: /minor/pay/list/1/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\minors\views.py", line 155, in directpayment_list
+    {'directcost': directcost, 'form': form, 'payments': payments})
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 987, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "D:\Coding\ContractCMS\contracts\templatetags\contracts_tag.py", line 28, in record
+    if len(str_obj) == 0:
+TypeError: object of type 'NoneType' has no len()
+Fri, 14 Jun 2019 09:21:50 log.py[line:228] ERROR Internal Server Error: /minor/pay/list/1/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\minors\views.py", line 155, in directpayment_list
+    {'directcost': directcost, 'form': form, 'payments': payments})
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 987, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "D:\Coding\ContractCMS\contracts\templatetags\contracts_tag.py", line 31, in record
+    return str_obj.zfill(4)
+AttributeError: 'NoneType' object has no attribute 'zfill'
+Fri, 14 Jun 2019 09:24:08 log.py[line:228] ERROR Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\utils.py", line 66, in __getitem__
+    return self._engines[alias]
+KeyError: 'django'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Coding\ContractCMS\dashboard\views.py", line 11, in dashboard
+    return render(request, 'dashboard/dashboard.html')
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\loader.py", line 12, in get_template
+    engines = _engine_list(using)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\loader.py", line 66, in _engine_list
+    return engines.all() if using is None else [engines[using]]
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\utils.py", line 90, in all
+    return [self[alias] for alias in self]
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\utils.py", line 90, in <listcomp>
+    return [self[alias] for alias in self]
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\utils.py", line 81, in __getitem__
+    engine = engine_cls(params)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\backends\django.py", line 25, in __init__
+    options['libraries'] = self.get_templatetag_libraries(libraries)
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\backends\django.py", line 43, in get_templatetag_libraries
+    libraries = get_installed_libraries()
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\backends\django.py", line 108, in get_installed_libraries
+    for name in get_package_libraries(pkg):
+  File "C:\Users\Minko\AppData\Roaming\Python\Python36\site-packages\django\template\backends\django.py", line 121, in get_package_libraries
+    module = import_module(entry[1])
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python36\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 674, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 781, in get_code
+  File "<frozen importlib._bootstrap_external>", line 741, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "D:\Coding\ContractCMS\contracts\templatetags\contracts_tag.py", line 32
+    else
+       ^
+SyntaxError: invalid syntax
+Fri, 14 Jun 2019 09:24:37 views.py[line:197] INFO lee0709 | direct_pay_edit | id=1 | amount=321.00 | rate=1.0000
+Fri, 14 Jun 2019 09:24:45 views.py[line:197] INFO lee0709 | direct_pay_edit | id=1 | amount=321.00 | rate=1.0000
+Fri, 14 Jun 2019 09:27:11 views.py[line:169] INFO lee0709 | direct_payments_add | id=4 | amount=666 | rate=0.06
+Fri, 14 Jun 2019 09:28:10 views.py[line:197] INFO lee0709 | direct_pay_edit | id=2 | amount=21.00 | rate=1.0000
+Fri, 14 Jun 2019 09:28:16 views.py[line:197] INFO lee0709 | direct_pay_edit | id=2 | amount=21.00 | rate=1.0000
+Tue, 09 Jul 2019 11:45:32 views.py[line:123] INFO lee0709 | contract_add | name=testcontract 1 | id=70 | amount=111111 | def=111111
+Tue, 09 Jul 2019 11:45:54 views.py[line:123] INFO lee0709 | contract_add | name=test2 | id=71 | amount=12132 | def=3213213
+Tue, 09 Jul 2019 11:47:17 views.py[line:123] INFO lee0709 | contract_add | name=321321 | id=72 | amount=2131 | def=321
+Tue, 09 Jul 2019 11:47:46 views.py[line:123] INFO lee0709 | contract_add | name=fdsafsda | id=73 | amount=123 | def=321
+Tue, 21 Apr 2020 17:07:51 log.py[line:228] ERROR Internal Server Error: /payments/detail/17/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedColumn: column payments_payment.tax does not exist
+LINE 1: ...nts_payment"."payday", "payments_payment"."text", "payments_...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\payments\views.py", line 33, in payment_detail
+    {'contract': contract, 'payments': payments, 'form': form})
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 166, in render
+    len_values = len(values)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\query.py", line 256, in __len__
+    self._fetch_all()
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\sql\compiler.py", line 1100, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column payments_payment.tax does not exist
+LINE 1: ...nts_payment"."payday", "payments_payment"."text", "payments_...
+                                                             ^
+
+Tue, 21 Apr 2020 17:07:52 log.py[line:228] WARNING Not Found: /favicon.ico
+Tue, 21 Apr 2020 17:09:04 log.py[line:228] ERROR Internal Server Error: /payments/detail/17/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedColumn: column payments_payment.tax does not exist
+LINE 1: ...nts_payment"."payday", "payments_payment"."text", "payments_...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\payments\views.py", line 33, in payment_detail
+    {'contract': contract, 'payments': payments, 'form': form})
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 166, in render
+    len_values = len(values)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\query.py", line 256, in __len__
+    self._fetch_all()
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\sql\compiler.py", line 1100, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column payments_payment.tax does not exist
+LINE 1: ...nts_payment"."payday", "payments_payment"."text", "payments_...
+                                                             ^
+
+Tue, 21 Apr 2020 17:12:00 views.py[line:46] INFO lee0709 | payment_add | amount=1321321 | id=70 | rate=0.06
+Tue, 21 Apr 2020 17:20:10 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\models.py changed, reloading.
+Tue, 21 Apr 2020 17:20:54 log.py[line:228] ERROR Internal Server Error: /payments/detail/17/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\payments\views.py", line 33, in payment_detail
+    {'contract': contract, 'payments': payments, 'form': form})
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 302, in render
+    match = condition.eval(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 876, in eval
+    return self.value.resolve(context, ignore_failures=True)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 858, in _resolve_lookup
+    current = current()
+  File "D:\Coding\ContractCMS\contracts\models.py", line 135, in total_tax
+    return self.payments.all().aggregate(Sum('tax'))['tax_sum']
+KeyError: 'tax_sum'
+Tue, 21 Apr 2020 17:21:33 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\models.py changed, reloading.
+Tue, 21 Apr 2020 17:21:34 log.py[line:228] ERROR Internal Server Error: /payments/detail/17/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\payments\views.py", line 33, in payment_detail
+    {'contract': contract, 'payments': payments, 'form': form})
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 987, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "D:\Coding\ContractCMS\contracts\templatetags\contracts_tag.py", line 10, in total_posts
+    return "{:,.2f}".format(decimal_obj)
+TypeError: unsupported format string passed to dict.__format__
+Tue, 21 Apr 2020 17:21:36 log.py[line:228] ERROR Internal Server Error: /payments/detail/17/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\payments\views.py", line 33, in payment_detail
+    {'contract': contract, 'payments': payments, 'form': form})
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 987, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "D:\Coding\ContractCMS\contracts\templatetags\contracts_tag.py", line 10, in total_posts
+    return "{:,.2f}".format(decimal_obj)
+TypeError: unsupported format string passed to dict.__format__
+Tue, 21 Apr 2020 17:25:21 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\models.py changed, reloading.
+Tue, 21 Apr 2020 17:31:19 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\models.py changed, reloading.
+Tue, 21 Apr 2020 17:31:22 log.py[line:228] ERROR Internal Server Error: /contracts/detail/17/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 71, in contract_detail
+    {'contract': contract})
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 302, in render
+    match = condition.eval(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 876, in eval
+    return self.value.resolve(context, ignore_failures=True)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 858, in _resolve_lookup
+    current = current()
+  File "D:\Coding\ContractCMS\contracts\models.py", line 138, in total_cost
+    return self.total_payment()-self.total_cost()
+  File "D:\Coding\ContractCMS\contracts\models.py", line 138, in total_cost
+    return self.total_payment()-self.total_cost()
+  File "D:\Coding\ContractCMS\contracts\models.py", line 138, in total_cost
+    return self.total_payment()-self.total_cost()
+  [Previous line repeated 914 more times]
+  File "D:\Coding\ContractCMS\contracts\models.py", line 120, in total_payment
+    if self.payments.all().count():
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\query.py", line 392, in count
+    return self.query.get_count(using=self.db)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\sql\query.py", line 504, in get_count
+    number = obj.get_aggregation(using, ['__count'])['__count']
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\sql\query.py", line 489, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\sql\compiler.py", line 1087, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\sql\compiler.py", line 489, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\sql\compiler.py", line 405, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\sql\where.py", line 81, in as_sql
+    sql, params = compiler.compile(child)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\sql\compiler.py", line 405, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\fields\related_lookups.py", line 130, in as_sql
+    return super().as_sql(compiler, connection)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\lookups.py", line 162, in as_sql
+    lhs_sql, params = self.process_lhs(compiler, connection)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\lookups.py", line 155, in process_lhs
+    db_type = self.lhs.output_field.db_type(connection=connection)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\fields\related.py", line 963, in db_type
+    return self.target_field.rel_db_type(connection=connection)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\fields\__init__.py", line 956, in rel_db_type
+    return IntegerField().db_type(connection=connection)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\fields\__init__.py", line 154, in __init__
+    if isinstance(choices, collections.abc.Iterator):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\abc.py", line 139, in __instancecheck__
+    return _abc_instancecheck(cls, instance)
+RecursionError: maximum recursion depth exceeded in comparison
+Tue, 21 Apr 2020 17:32:05 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\models.py changed, reloading.
+Tue, 21 Apr 2020 17:32:08 log.py[line:228] ERROR Internal Server Error: /contracts/detail/17/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 71, in contract_detail
+    {'contract': contract})
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 302, in render
+    match = condition.eval(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 876, in eval
+    return self.value.resolve(context, ignore_failures=True)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 858, in _resolve_lookup
+    current = current()
+  File "D:\Coding\ContractCMS\contracts\models.py", line 139, in total_cost
+    if self.total_payment().all().count():
+AttributeError: 'decimal.Decimal' object has no attribute 'all'
+Tue, 21 Apr 2020 17:32:17 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\models.py changed, reloading.
+Tue, 21 Apr 2020 17:32:28 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\models.py changed, reloading.
+Tue, 21 Apr 2020 17:32:32 log.py[line:228] ERROR Internal Server Error: /contracts/detail/17/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 71, in contract_detail
+    {'contract': contract})
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 302, in render
+    match = condition.eval(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 876, in eval
+    return self.value.resolve(context, ignore_failures=True)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 858, in _resolve_lookup
+    current = current()
+  File "D:\Coding\ContractCMS\contracts\models.py", line 140, in total_cost
+    return self.total_payment() - self.total_cost()
+  File "D:\Coding\ContractCMS\contracts\models.py", line 140, in total_cost
+    return self.total_payment() - self.total_cost()
+  File "D:\Coding\ContractCMS\contracts\models.py", line 140, in total_cost
+    return self.total_payment() - self.total_cost()
+  [Previous line repeated 914 more times]
+  File "D:\Coding\ContractCMS\contracts\models.py", line 120, in total_payment
+    if self.payments.all().count():
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\query.py", line 392, in count
+    return self.query.get_count(using=self.db)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\sql\query.py", line 504, in get_count
+    number = obj.get_aggregation(using, ['__count'])['__count']
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\sql\query.py", line 489, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\sql\compiler.py", line 1087, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\sql\compiler.py", line 489, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\sql\compiler.py", line 405, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\sql\where.py", line 81, in as_sql
+    sql, params = compiler.compile(child)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\sql\compiler.py", line 405, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\fields\related_lookups.py", line 130, in as_sql
+    return super().as_sql(compiler, connection)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\lookups.py", line 162, in as_sql
+    lhs_sql, params = self.process_lhs(compiler, connection)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\lookups.py", line 155, in process_lhs
+    db_type = self.lhs.output_field.db_type(connection=connection)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\fields\related.py", line 963, in db_type
+    return self.target_field.rel_db_type(connection=connection)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\fields\__init__.py", line 956, in rel_db_type
+    return IntegerField().db_type(connection=connection)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\fields\__init__.py", line 154, in __init__
+    if isinstance(choices, collections.abc.Iterator):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\abc.py", line 139, in __instancecheck__
+    return _abc_instancecheck(cls, instance)
+RecursionError: maximum recursion depth exceeded in comparison
+Tue, 21 Apr 2020 17:32:55 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\models.py changed, reloading.
+Tue, 21 Apr 2020 17:33:39 views.py[line:46] INFO lee0709 | payment_add | amount=10000 | id=71 | rate=0.06
+Tue, 21 Apr 2020 17:40:02 log.py[line:228] ERROR Internal Server Error: /contracts/listall/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 197, in contract_listall
+    'subject': subject})
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 302, in render
+    match = condition.eval(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 876, in eval
+    return self.value.resolve(context, ignore_failures=True)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 858, in _resolve_lookup
+    current = current()
+  File "D:\Coding\ContractCMS\contracts\models.py", line 139, in total_cost
+    return self.total_payment() - self.total_tax()
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'int'
+Tue, 21 Apr 2020 17:41:00 log.py[line:228] ERROR Internal Server Error: /contracts/list/1/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 44, in contract_list
+    'subject': subject})
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 302, in render
+    match = condition.eval(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 876, in eval
+    return self.value.resolve(context, ignore_failures=True)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 858, in _resolve_lookup
+    current = current()
+  File "D:\Coding\ContractCMS\contracts\models.py", line 139, in total_cost
+    return self.total_payment() - self.total_tax()
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'int'
+Tue, 21 Apr 2020 17:42:41 log.py[line:228] ERROR Internal Server Error: /contracts/list/2/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\contracts\views.py", line 44, in contract_list
+    'subject': subject})
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 302, in render
+    match = condition.eval(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 876, in eval
+    return self.value.resolve(context, ignore_failures=True)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 858, in _resolve_lookup
+    current = current()
+  File "D:\Coding\ContractCMS\contracts\models.py", line 139, in total_cost
+    return self.total_payment() - self.total_tax()
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'int'
+Tue, 21 Apr 2020 17:43:37 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\models.py changed, reloading.
+Tue, 21 Apr 2020 17:48:19 views.py[line:46] INFO lee0709 | payment_add | amount=30000 | id=72 | rate=0.06
+Tue, 21 Apr 2020 17:54:15 autoreload.py[line:217] INFO D:\Coding\ContractCMS\minors\models.py changed, reloading.
+Tue, 21 Apr 2020 17:57:23 autoreload.py[line:217] INFO D:\Coding\ContractCMS\minors\models.py changed, reloading.
+Tue, 21 Apr 2020 18:00:18 views.py[line:169] INFO lee0709 | direct_payments_add | id=3 | amount=3210 | rate=0.05
+Tue, 21 Apr 2020 18:00:44 views.py[line:197] INFO lee0709 | direct_pay_edit | id=3 | amount=3210.00 | rate=0.0500
+Tue, 21 Apr 2020 18:02:03 views.py[line:197] INFO lee0709 | direct_pay_edit | id=2 | amount=46606.00 | rate=0.0000
+Tue, 21 Apr 2020 18:02:11 views.py[line:197] INFO lee0709 | direct_pay_edit | id=1 | amount=701455.00 | rate=0.0000
+Tue, 21 Apr 2020 18:03:43 log.py[line:228] ERROR Internal Server Error: /minor/list/1/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'DirectCost' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\minors\views.py", line 32, in minor_list
+    {'directcosts': directcosts, 'form': form, 'subjects': subjects, 'subject': subject})
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 987, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+  File "D:\Coding\ContractCMS\minors\models.py", line 44, in total_cost
+    if self.directpayments.all.count():
+AttributeError: 'function' object has no attribute 'count'
+Tue, 21 Apr 2020 18:03:43 log.py[line:228] WARNING Not Found: /favicon.ico
+Tue, 21 Apr 2020 18:04:01 autoreload.py[line:217] INFO D:\Coding\ContractCMS\minors\models.py changed, reloading.
+Tue, 21 Apr 2020 18:07:01 views.py[line:79] INFO 蒋玲珺 | payment_edit | amount=30000.00 | id=14 | rate=0.06
+Tue, 21 Apr 2020 18:07:48 views.py[line:197] INFO 蒋玲珺 | direct_pay_edit | id=3 | amount=3210.00 | rate=0.0500
+Tue, 21 Apr 2020 18:08:00 views.py[line:197] INFO 蒋玲珺 | direct_pay_edit | id=3 | amount=3210.00 | rate=0.0500
+Tue, 21 Apr 2020 18:10:04 views.py[line:46] INFO 蒋玲珺 | payment_add | amount=230000 | id=73 | rate=0.06
+Tue, 21 Apr 2020 18:13:30 views.py[line:46] INFO 蒋玲珺 | payment_add | amount=5000000 | id=74 | rate=0.06
+Tue, 21 Apr 2020 18:17:59 views.py[line:46] INFO 蒋玲珺 | payment_add | amount=26000 | id=75 | rate=0.0598
+Tue, 21 Apr 2020 18:18:06 log.py[line:228] WARNING Not Found: /favicon.ico
+Tue, 21 Apr 2020 18:19:40 views.py[line:46] INFO 蒋玲珺 | payment_add | amount=1111 | id=76 | rate=0.06
+Tue, 21 Apr 2020 18:20:45 views.py[line:79] INFO 蒋玲珺 | payment_edit | amount=0 | id=76 | rate=0.0600
+Wed, 22 Apr 2020 10:04:54 views.py[line:197] INFO lee0709 | direct_pay_edit | id=3 | amount=3210.00 | rate=0.0500
+Wed, 22 Apr 2020 10:18:42 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\models.py changed, reloading.
+Wed, 22 Apr 2020 10:52:30 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\models.py changed, reloading.
+Wed, 22 Apr 2020 11:11:09 autoreload.py[line:217] INFO D:\Coding\ContractCMS\contracts\models.py changed, reloading.
+Wed, 22 Apr 2020 11:17:34 log.py[line:228] WARNING Not Found: /favicon.ico
+Wed, 22 Apr 2020 11:19:58 autoreload.py[line:217] INFO D:\Coding\ContractCMS\payments\models.py changed, reloading.
+Wed, 22 Apr 2020 11:29:42 views.py[line:46] INFO lee0709 | payment_add | amount=20000 | id=77 | rate=0.0599
