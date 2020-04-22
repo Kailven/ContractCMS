@@ -33,9 +33,10 @@
                 <div class="cell small-10 medium-3"></div>
             </div>
             {% for field in form %}
-
+{#                这里隐藏公司的显示, 但是实际有数据, 避免修改,  可以用label来检测是否修改 #}
+{#                这里还可以做的更简单一些, 下边那些隐藏字段都可以不要#}
                 <div class="grid-x align-center-middle grid-padding-x ">
-
+                {% if not field.label == '公司' %}
                     <div class="cell small-10 medium-3 medium-text-right">
                         {{ field.label_tag }}
                     </div>
@@ -46,6 +47,18 @@
                     <div class="cell small-10 medium-3 text-center">
                         {{ field.errors }}
                     </div>
+                {% else %}
+                    <div class="cell small-10 medium-3 medium-text-right" style="display: none">
+                        {{ field.label_tag }}
+                    </div>
+                    <div class="cell small-10 medium-6" style="display: none">
+                        {{ field }}
+                    </div>
+
+                    <div class="cell small-10 medium-3 text-center" style="display: none">
+                        {{ field.errors }}
+                    </div>
+                {% endif %}
                 </div>
             {% endfor %}
             <div class="grid-x align-center">
