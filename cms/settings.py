@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'requisitions.apps.RequisitionsConfig',
     'payments.apps.PaymentsConfig',
     'minors.apps.MinorsConfig',
+    'download.apps.DownloadConfig'
 ]
 
 MIDDLEWARE = [

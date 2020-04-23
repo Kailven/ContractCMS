@@ -2472,3 +2472,270 @@ Wed, 22 Apr 2020 16:01:57 log.py[line:228] WARNING Not Found: /favicon.ico
 Wed, 22 Apr 2020 16:03:04 views.py[line:123] INFO lee0709 | contract_add | name=1232321 | id=77 | amount=66666 | def=77777
 Wed, 22 Apr 2020 16:03:27 views.py[line:123] INFO lee0709 | contract_add | name=121212 | id=78 | amount=0 | def=-0.02
 Wed, 22 Apr 2020 16:04:56 views.py[line:123] INFO lee0709 | contract_add | name=321132 | id=79 | amount=123 | def=321320.99
+Wed, 22 Apr 2020 16:15:54 views.py[line:165] INFO lee0709 | contract_edit | name=321132 | id=79 | amount=123.00 | def=321320.99
+Wed, 22 Apr 2020 16:16:08 views.py[line:165] INFO lee0709 | contract_edit | name=321132 | id=79 | amount=999999 | def=200000
+Wed, 22 Apr 2020 16:16:18 views.py[line:44] INFO lee0709 | req_add | amount=10000 | id=45 | invoice=10000
+Wed, 22 Apr 2020 16:16:27 views.py[line:44] INFO lee0709 | req_add | amount=50000 | id=46 | invoice=50000
+Wed, 22 Apr 2020 16:16:44 views.py[line:44] INFO lee0709 | req_add | amount=130000 | id=47 | invoice=130000
+Wed, 22 Apr 2020 16:17:06 views.py[line:46] INFO lee0709 | payment_add | amount=100000 | id=85 | rate=0.06
+Wed, 22 Apr 2020 16:21:48 views.py[line:165] INFO lee0709 | contract_edit | name=321132 | id=79 | amount=999999.00 | def=200000.00
+Wed, 22 Apr 2020 16:21:58 views.py[line:165] INFO lee0709 | contract_edit | name=321132 | id=79 | amount=223054 | def=200000.00
+Wed, 22 Apr 2020 16:25:05 views.py[line:165] INFO lee0709 | contract_edit | name=上海市公安局虹口分局民警培训中心临时过渡用房项目工程设计合同 | id=68 | amount=120500 | def=None
+Wed, 22 Apr 2020 16:29:01 views.py[line:123] INFO lee0709 | contract_add | name=432121132 | id=80 | amount=120000 | def=30000
+Wed, 22 Apr 2020 16:42:09 views.py[line:46] INFO lee0709 | payment_add | amount=120000 | id=86 | rate=0.06
+Wed, 22 Apr 2020 16:42:31 views.py[line:79] INFO lee0709 | payment_edit | amount=120000.00 | id=86 | rate=0.0600
+Thu, 23 Apr 2020 09:33:50 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\urls.py changed, reloading.
+Thu, 23 Apr 2020 09:34:15 log.py[line:228] ERROR Internal Server Error: /download/all/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\utils\deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\middleware\clickjacking.py", line 26, in process_response
+    if response.get('X-Frame-Options') is not None:
+TypeError: get() missing 1 required positional argument: 'header'
+Thu, 23 Apr 2020 09:34:15 log.py[line:228] WARNING Not Found: /favicon.ico
+Thu, 23 Apr 2020 09:34:56 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:35:27 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:36:14 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:36:19 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:36:23 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:36:28 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:36:32 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:36:38 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:36:46 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:36:53 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:37:19 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:37:38 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:37:58 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:38:04 log.py[line:228] ERROR Internal Server Error: /download/all/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\download\views.py", line 12, in getCompleteList
+    filename = time.strftime("%Y-%m-%d合同台账",time.localtime())
+UnicodeEncodeError: 'locale' codec can't encode character '\u5408' in position 8: encoding error
+Thu, 23 Apr 2020 09:38:22 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:38:50 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:39:12 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:39:37 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:39:53 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:39:56 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:41:00 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:41:45 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:42:40 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:43:08 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:43:14 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:43:58 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:44:17 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:46:00 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:46:29 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:46:55 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:47:04 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:47:12 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:47:15 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:47:20 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:47:31 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:47:34 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:47:43 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:47:54 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:48:01 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:48:09 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:48:18 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:48:23 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:48:31 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:48:35 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:48:40 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:48:46 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:48:50 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:49:01 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:49:35 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:53:25 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:53:50 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:55:04 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:55:24 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:56:51 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:56:55 log.py[line:228] ERROR Internal Server Error: /download/all/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\download\views.py", line 24, in getCompleteList
+    writeHeader(result)
+  File "D:\Coding\ContractCMS\download\views.py", line 72, in writeHeader
+    row1[1] = '公司'
+TypeError: 'tuple' object does not support item assignment
+Thu, 23 Apr 2020 09:58:07 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:58:14 log.py[line:228] ERROR Internal Server Error: /download/all/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\download\views.py", line 24, in getCompleteList
+    writeHeader(result)
+  File "D:\Coding\ContractCMS\download\views.py", line 72, in writeHeader
+    row1[1].value = '公司'
+IndexError: tuple index out of range
+Thu, 23 Apr 2020 09:59:51 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 09:59:54 log.py[line:228] ERROR Internal Server Error: /download/all/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\download\views.py", line 31, in getCompleteList
+    mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\http\response.py", line 289, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'mimetype'
+Thu, 23 Apr 2020 10:00:35 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:00:37 log.py[line:228] ERROR Internal Server Error: /download/all/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\download\views.py", line 31, in getCompleteList
+    mimetype='application/octet-stream')
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\http\response.py", line 289, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'mimetype'
+Thu, 23 Apr 2020 10:02:02 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:02:26 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:02:51 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:04:49 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:05:20 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:05:33 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:06:27 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:06:55 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:07:38 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:07:47 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:08:16 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:08:33 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:12:20 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:14:52 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:16:36 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:17:03 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:20:51 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:20:53 log.py[line:228] ERROR Internal Server Error: /download/all/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\download\views.py", line 28, in getCompleteList
+    writeContent(contracts, result)
+  File "D:\Coding\ContractCMS\download\views.py", line 105, in writeContent
+    print(columns[0]+start)
+TypeError: can only concatenate str (not "int") to str
+Thu, 23 Apr 2020 10:20:53 log.py[line:228] WARNING Not Found: /favicon.ico
+Thu, 23 Apr 2020 10:21:04 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:21:59 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:22:25 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:22:55 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:23:34 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:25:07 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:27:08 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:30:56 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:33:45 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:33:48 log.py[line:228] ERROR Internal Server Error: /download/all/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\download\views.py", line 28, in getCompleteList
+    writeContent(contracts, result)
+  File "D:\Coding\ContractCMS\download\views.py", line 121, in writeContent
+    worksheet[columns[11] + str(start)].value = contract.total_payable()
+TypeError: 'decimal.Decimal' object is not callable
+Thu, 23 Apr 2020 10:34:07 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:34:09 log.py[line:228] ERROR Internal Server Error: /download/all/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Coding\ContractCMS\download\views.py", line 28, in getCompleteList
+    writeContent(contracts, result)
+  File "D:\Coding\ContractCMS\download\views.py", line 123, in writeContent
+    worksheet[columns[13] + str(start)].value = contract.development_cost()
+TypeError: 'decimal.Decimal' object is not callable
+Thu, 23 Apr 2020 10:34:20 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:39:15 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\urls.py changed, reloading.
+Thu, 23 Apr 2020 10:39:57 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\urls.py changed, reloading.
+Thu, 23 Apr 2020 10:52:07 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:53:15 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:55:42 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 10:56:11 autoreload.py[line:217] INFO D:\Coding\ContractCMS\minors\models.py changed, reloading.
+Thu, 23 Apr 2020 10:59:24 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:00:16 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:00:39 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:00:53 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:00:55 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:01:02 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:01:05 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:01:08 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:01:19 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:02:50 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:02:54 log.py[line:228] ERROR Internal Server Error: /download/minors/
+Traceback (most recent call last):
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Minko\AppData\Local\Programs\Python\Python37\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Coding\ContractCMS\download\views.py", line 157, in getMinorsList
+    writeMinorContent(direct_costs, result)
+  File "D:\Coding\ContractCMS\download\views.py", line 218, in writeMinorContent
+    worksheet[columns[2] + str(start)].value = contract.index
+AttributeError: 'DirectCost' object has no attribute 'index'
+Thu, 23 Apr 2020 11:03:29 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:03:40 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:04:27 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:05:19 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:07:47 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:08:49 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:14:38 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:14:43 autoreload.py[line:217] INFO D:\Coding\ContractCMS\download\views.py changed, reloading.
+Thu, 23 Apr 2020 11:17:49 views.py[line:49] INFO lee0709 | minor_add | name=ssfgs | id=2 | amount=562066
+Thu, 23 Apr 2020 11:18:29 views.py[line:105] INFO lee0709 | direct_req_add | id=3 | amount=2000 | invoice=2000
+Thu, 23 Apr 2020 11:18:55 views.py[line:169] INFO lee0709 | direct_payments_add | id=4 | amount=2000 | rate=0
+Thu, 23 Apr 2020 11:20:41 views.py[line:169] INFO lee0709 | direct_payments_add | id=5 | amount=70000 | rate=0

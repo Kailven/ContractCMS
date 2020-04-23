@@ -24,5 +24,6 @@ urlpatterns = [
     path('requisitions/', include('requisitions.urls', namespace='requisitions')),
     path('payments/', include('payments.urls', namespace='payments')),
     path('minor/', include('minors.urls', namespace='minors')),
+    path('download/', include('download.urls', namespace='download')),
     path('', include('dashboard.urls', namespace='dashboard')),
 ]

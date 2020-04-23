@@ -9,7 +9,7 @@ class DirectCost(models.Model):
     supplier = models.CharField(max_length=50, verbose_name='付款单位', db_index=True)
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='directcosts', verbose_name='公司',
                                 default=1)
-    subject = models.ForeignKey(Subject, related_name='directcosts', on_delete=models.CASCADE, verbose_name='类别')
+    subject = models.ForeignKey(Subject, related_name='类别', on_delete=models.CASCADE, verbose_name='类别')
     text = models.TextField(blank=True, null=True, verbose_name='付款说明')
     created = models.DateTimeField(auto_now_add=True, verbose_name='创建时间', db_index=True)
     updated = models.DateTimeField(auto_now=True, verbose_name='更新时间')
