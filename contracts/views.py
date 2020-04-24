@@ -96,9 +96,7 @@ def contract_add(request, master_id=None):
         form = ContractForm(request.POST)
 
         if form.is_valid():
-            # company_id = request.POST.get("company_id")
             new_contract = form.save(commit=False)
-            print(new_contract.company.id)
 
             index = new_contract.company.name + '(' + new_contract.sign.strftime(
                 "%Y") + ')' + '-' + new_contract.subject.tag + '-' + str(
