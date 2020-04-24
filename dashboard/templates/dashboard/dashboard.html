@@ -12,17 +12,24 @@
     <div class="grid-container">
         <h2>快速开始</h2>
         {#        新功能提示#}
-        <h3 class="type-sidelines"><span><i class="fi-star primary-color">&nbsp;</i>1.4版本新功能</span></h3>
+        <h3 class="type-sidelines"><span><i class="fi-star primary-color">&nbsp;</i>1.41版本新功能</span></h3>
         <div class="cell ">
             <div class="card shadow" data-equalizer-watch>
                 <div class="card-divider">
-                    <span class="primary-color"><i class="fi-star"></i></span><span>&nbsp;&nbsp;现在可以下载汇总的台账了</span>
+                    <span class="primary-color"><i class="fi-star"></i></span><span>&nbsp;&nbsp;新增下载功能与部门支持</span>
                 </div>
                 <div class="card-section">
                     <h4>增加了下载功能</h4>
-                    <p class="h6">登录之后点击顶部导航栏的&nbsp<a href="{% url 'download:downloadContracts' %}">下载合同台账</a>&nbsp可以下载当前系统内全部的合同台账，文件格式为xlsx。</p>
-                    <p class="h6">顶部导航栏的&nbsp<a href="{% url 'download:downloadMinors' %}">下载非合同付款台账</a>&nbsp可以下载当前系统内全部的非合同付款台账，文件格式为xlsx。</p>
+                    <p class="h6">登录之后点击顶部导航栏的&nbsp<a href="{% url 'download:downloadContracts' %}">下载合同台账</a>&nbsp可以下载当前系统内全部的合同台账，文件格式为xlsx。
+                    </p>
+                    <p class="h6">顶部导航栏的&nbsp<a href="{% url 'download:downloadMinors' %}">下载非合同付款台账</a>&nbsp可以下载当前系统内全部的非合同付款台账，文件格式为xlsx。
+                    </p>
                     <p class="h6">不论在任何页面均可以下载，每次下载都是当前系统内的全部对应记录。</p>
+                    <hr>
+
+                    <h4>在新增合同的时候可以选择部门了</h4>
+                    <p class="h6">在新增合同的时候可以根据用户身份选择合同所属的部门</p>
+                    <p class="h6">需要增加新部门需要联系系统管理员</p>
                 </div>
             </div>
         </div>

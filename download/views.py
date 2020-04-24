@@ -7,7 +7,7 @@ from openpyxl import Workbook
 import time
 
 # 可重用的列名索引
-columns = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U']
+columns = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V']
 
 
 # 将数据库中所有数据对象的内容写入到Excel格式的合同台账中的功能
@@ -68,7 +68,8 @@ def writeHeader(workbook: Workbook):
     # 18 印花税金额
     # 19 是否有效
     # 20 是否计入成本
-    # 21 合同摘要
+    # 21 所属部门
+    # 22 合同摘要
 
     worksheet['A1'].value = '公司'
     worksheet['B1'].value = '合同类型'
@@ -90,7 +91,8 @@ def writeHeader(workbook: Workbook):
     worksheet['R1'].value = '印花税金额'
     worksheet['S1'].value = '是否有效'
     worksheet['T1'].value = '是否计入成本'
-    worksheet['U1'].value = '合同摘要'
+    worksheet['U1'].value = '所属部门'
+    worksheet['V1'].value = '合同摘要'
 
 
 def writeContent(contracts, workbook: Workbook):
@@ -136,7 +138,8 @@ def writeContent(contracts, workbook: Workbook):
         else:
             worksheet[columns[19] + str(start)].value = '否'
 
-        worksheet[columns[20] + str(start)].value = contract.text
+        worksheet[columns[20] + str(start)].value = contract.department.name
+        worksheet[columns[21] + str(start)].value = contract.text
         start = start + 1
 
 
@@ -200,7 +203,6 @@ def writeMinorHeader(workbook: Workbook):
 
 
 def writeMinorContent(costs, workbook: Workbook):
-
     worksheet = workbook.active
 
     # 获取计数看看, 实际用不到该代码

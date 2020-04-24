@@ -57,14 +57,13 @@
                                     <th class="text-center"><span data-tooltip tabindex="2"
                                                                   title="点击金额查看付款详情">付款金额</span></th>
                                     <th class="text-center">未付金额</th>
-                                    <th class="text-center">不含税金额</th>
                                     <th class="text-center">增值税额</th>
                                     <th class="text-center">付款比例</th>
                                     {#                                    1.3版本新增 应付, 预付, 从已付计算出开发成本#}
                                     <th class="text-center">应付合计</th>
                                     <th class="text-center">预付合计</th>
                                     <th class="text-center">开发成本</th>
-                                    <th class="text-center hide-for-small-only">签订时间</th>
+                                    <th class="text-center hide-for-small-only">部门</th>
 
                                     <th class="text-center ">印花税金额</th>
                                     <th class="text-center ">有效</th>
@@ -114,8 +113,8 @@
                                                 {{ contract.development_cost|comma }}{% endif %}</td>
 
 
-                                        <td data-label="签订时间"
-                                            class="hide-for-small-only">{{ contract.sign|date:"Y-m-d" }}</td>
+                                        <td data-label="部门"
+                                            class="hide-for-small-only">{{ contract.department.name }}</td>
                                         <td data-label="印花税金额">
                                             {{ contract.stamp_amount|comma }}
                                         </td>
@@ -179,8 +178,8 @@
                                                         {{ supple.development_cost|comma }}{% endif %}</td>
 
 
-                                                <td data-label="签订时间"
-                                                    class="hide-for-small-only">{{ supple.sign|date:"Y-m-d" }}</td>
+                                                <td data-label="部门"
+                                                    class="hide-for-small-only">{{ supple.department.name }}</td>
                                                 <td data-label="印花税金额">
                                                     {{ supple.stamp_amount|comma }}
                                                 </td>

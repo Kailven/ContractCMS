@@ -5,6 +5,20 @@ from django.db.models import Sum
 from decimal import Decimal
 from django.utils import timezone
 
+class Department(models.Model):
+    name = models.CharField(max_length=40, verbose_name='部门名称')
+    created = models.DateTimeField(auto_now_add=True, verbose_name='创建时间', db_index=True)
+    updated = models.DateTimeField(auto_now=True, verbose_name='修改时间')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['created', ]
+        verbose_name = '部门'
+        verbose_name_plural = '部门'
+
+
 
 class Company(models.Model):
     name = models.CharField(max_length=40, verbose_name='公司名称')
@@ -78,6 +92,10 @@ class Contract(models.Model):
     stamp_amount = models.DecimalField(max_digits=16, decimal_places=2, verbose_name='印花税金额', default=0)
     created = models.DateTimeField(default=timezone.now, verbose_name='创建时间', db_index=True)
     updated = models.DateTimeField(auto_now=True, verbose_name='更新时间')
+
+    department = models.ForeignKey(Department, on_delete=models.CASCADE,related_name='dep',verbose_name='部门名称', default=1)
+
+
 
     def __str__(self):
         return self.name

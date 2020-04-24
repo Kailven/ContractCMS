@@ -6,7 +6,8 @@ class ContractForm(forms.ModelForm):
     class Meta:
         model = Contract
         fields = (
-            'name', 'company', 'supplier', 'subject', 'sign', 'amount', 'definite', 'active', 'is_cost', 'jgc', 'text',)
+            'name', 'company', 'department', 'supplier', 'subject', 'sign', 'amount', 'definite', 'active', 'is_cost',
+            'jgc', 'text',)
         widgets = {
             'sign': forms.DateInput()
         }
